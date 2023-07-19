@@ -1,2 +1,1 @@
-# ioohd.github.io
-my-blog
+# ioohd-blog
