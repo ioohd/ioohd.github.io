@@ -56,8 +56,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/07/18/hello-world/" class="article-date">
-  <time datetime="2020-07-18T08:04:26.000Z" itemprop="datePublished">2020-07-18</time>
+      <a href="/2023/07/19/hello-world/" class="article-date">
+  <time datetime="2023-07-19T07:12:20.787Z" itemprop="datePublished">2023-07-19</time>
 </a>
       
     </div>
@@ -73,10 +73,13 @@
       
       
       
-        <p>编写博客使用的几乎全是Markdown语法，先给不知道怎么写的小伙伴上个链接~<a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/">Markdown官网</a></p>
-<p>我也在CSDN找了一篇，也可以看看<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014061630/article/details/81359144?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168967454716800197084944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168967454716800197084944&biz_id=0&utm_medium=distribute.pc_chrome_plugin_search_result.none-task-blog-2~all~top_positive~default-1-81359144-null-null.nonecase&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2226.3001.4187">语法图文全面详解</a></p>
-<blockquote>
+        <h4 id="我为什么要搭建一篇博客？"><a href="#我为什么要搭建一篇博客？" class="headerlink" title="我为什么要搭建一篇博客？"></a>我为什么要搭建一篇博客？</h4><blockquote>
+<p>之前在学习的过程中，遇到过的很多问题，基本上都是通过百度解决的，然后也见了很多人搭建了自己博客，并且每个人的博客对于他们来说的作用都不一样，我决定搭建一个博客也是觉得我的学习历程可以被记录下来，也可以分享一些出去游玩的东西。</p>
+<p>也有出于挑战一下的心态，我选了 hexo 加 github 搭建博客，hexo 还没接触过，但是知道这样搭建的博客还是基于 node.js 的，同时也希望在搭建的过程中学习到一些新的东西。</p>
+<p>反正挺酷的！</p>
 </blockquote>
+<p>编写博客使用的几乎全是Markdown语法，先给不知道怎么写的小伙伴上个链接~<a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/">Markdown官网</a></p>
+<p>我也在CSDN找了一篇，也可以看看<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014061630/article/details/81359144?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168967454716800197084944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168967454716800197084944&biz_id=0&utm_medium=distribute.pc_chrome_plugin_search_result.none-task-blog-2~all~top_positive~default-1-81359144-null-null.nonecase&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2226.3001.4187">语法图文全面详解</a></p>
 <span id="more"></span>
 
 <h2 id="安装hexo包"><a href="#安装hexo包" class="headerlink" title="安装hexo包"></a>安装hexo包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
@@ -87,9 +90,13 @@
 
 <h3 id="本地启动博客-—-Run-server"><a href="#本地启动博客-—-Run-server" class="headerlink" title="本地启动博客 — Run server"></a>本地启动博客 — Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (hexo s)</span><br></pre></td></tr></table></figure>
 
-<h3 id="打包为静态文件"><a href="#打包为静态文件" class="headerlink" title="打包为静态文件"></a>打包为静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo g)</span><br></pre></td></tr></table></figure>
+<h3 id="打包为静态文件"><a href="#打包为静态文件" class="headerlink" title="打包为静态文件"></a>打包为静态文件</h3><p>hexo g 命令执行后会生成一个public文件下，这个文件夹便是打包后生成的静态文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo g)</span><br></pre></td></tr></table></figure>
 
-<h3 id="部署至github"><a href="#部署至github" class="headerlink" title="部署至github"></a>部署至github</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo d)</span><br></pre></td></tr></table></figure>
+<h3 id="推送至github"><a href="#推送至github" class="headerlink" title="推送至github"></a>推送至github</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这里也可以使用git命令行来推送至远程仓库（敲命令行主要是帅！！！帅就完了啊哈哈哈哈哈哈哈哈）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;提交备注&#x27;</span></span><br><span class="line">git pull</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
 
 <h3 id="清空博客缓存"><a href="#清空博客缓存" class="headerlink" title="清空博客缓存"></a>清空博客缓存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 
@@ -99,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/07/18/hello-world/" data-id="clk9ihvz80001t4o38ol7h0sz" class="article-share-link">
+      <a data-url="http://example.com/2023/07/19/hello-world/" data-id="clk9n1iy0000474o36p80asg9" class="article-share-link">
         Share
       </a>
       
@@ -113,15 +120,11 @@
   
 <nav class="article-nav">
   
-  <a href="/2023/07/18/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      第一篇测试博客
-      
-    </div>
-  </a>
   
+  <a href="/2022/06/19/VUE%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">VUE写一个简单的Todolist</div>
+  </a>
   
 </nav>
 
@@ -134,10 +137,7 @@
 
 </article>
 </section>
-    <head>
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-</head>
-<footer class="footer">
+    <footer class="footer">
   <div class="outer">
     <ul class="list-inline">
       <li>神兜兜气昂昂 &copy; 2023</li>
@@ -151,6 +151,8 @@
       <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
       <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
     </ul>
+    <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次 &nbsp;   </span>
+    <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人次</span> -->
     <p><ul class="list-inline">
   
   <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
@@ -158,9 +160,6 @@
   <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
   
 </ul></p>
-    <span id="busuanzi_container_site_pv">
-      本站总访问量<span id="busuanzi_value_site_pv"></span>次
-    </span>
   </div>
 </footer>
   </main>

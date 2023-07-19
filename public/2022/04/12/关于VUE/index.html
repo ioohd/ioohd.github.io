@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    关于VUE |
+    
+    神兜兜气昂昂
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/shark.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div style="position: fixed; left: 10px; bottom: 10px; z-index: 999;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=436346833&auto=1&height=32"></iframe>
+  </div>
+</body>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-关于VUE" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    关于VUE
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/04/12/%E5%85%B3%E4%BA%8EVUE/" class="article-date">
+  <time datetime="2022-04-12T10:23:34.000Z" itemprop="datePublished">2022-04-12</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h4 id="Vue-是什么？"><a href="#Vue-是什么？" class="headerlink" title="Vue 是什么？"></a>Vue 是什么？</h4><p><img src="/images/vue-logo.svg"><br>先放一下 Vue 的官网，多读一读<a target="_blank" rel="noopener" href="https://v2.cn.vuejs.org/">Vue 官方文档</a>总是有好处的 ~</p>
+<h3 id="简单点来说-Vue-是一套用于构建用户界面的前端渐进式的-MVVM-开发框架。"><a href="#简单点来说-Vue-是一套用于构建用户界面的前端渐进式的-MVVM-开发框架。" class="headerlink" title="简单点来说 Vue 是一套用于构建用户界面的前端渐进式的 MVVM 开发框架。"></a>简单点来说 Vue 是一套用于构建用户界面的前端渐进式的 MVVM 开发框架。</h3><span id="more"></span>
+
+<h4 id="Vue-的生命周期是什么？"><a href="#Vue-的生命周期是什么？" class="headerlink" title="Vue 的生命周期是什么？"></a>Vue 的生命周期是什么？</h4><p>Vue实例从开始创建、初始化数据、编译模板、挂载dom和渲染、更新和渲染、卸载等一系列过程，这就是Vue的生命周期</p>
+<h4 id="Vue-的钩子函数有哪些？"><a href="#Vue-的钩子函数有哪些？" class="headerlink" title="Vue 的钩子函数有哪些？"></a>Vue 的钩子函数有哪些？</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BeforeCreate()  组件实例被创建之初，组件的属性生效之前</span><br><span class="line">created()  组件实例已经完全创建，属性也绑定，但真实 dom 还没有生成，<span class="variable">$el</span> 还不可用</span><br><span class="line">BeforeMount()  在挂载开始之前被调用：相关的 render 函数首次被调用</span><br><span class="line">mounted()  el 被新创建的 vm.<span class="variable">$el</span> 替换，并挂载到实例上去之后调用该钩子</span><br><span class="line">BeforeUpdate()  组件数据更新之前调用，发生在虚拟 DOM 打补丁之前</span><br><span class="line">updated()  组件数据更新之后</span><br><span class="line">BeforeDestroy()  组件销毁前</span><br><span class="line">destroyed()  组件销毁成功</span><br></pre></td></tr></table></figure>
+
+<h4 id="Vue-在哪个生命周期内调用异步请求？为什么？"><a href="#Vue-在哪个生命周期内调用异步请求？为什么？" class="headerlink" title="Vue 在哪个生命周期内调用异步请求？为什么？"></a>Vue 在哪个生命周期内调用异步请求？为什么？</h4><p>可以在created、beforeMount、mounted中调用，因为这三个钩子函数中，data已经创建，可以将服务器返回的数据进行赋值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在created中用异步请求的优点</span><br><span class="line">    能更快的获取服务器的数据，减少页面加载时间。</span><br><span class="line">    ssr不支持beforeMount、mounted，所以放在created中有助于一致性。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Vue-组件间通信方式有哪些？"><a href="#Vue-组件间通信方式有哪些？" class="headerlink" title="Vue 组件间通信方式有哪些？"></a>Vue 组件间通信方式有哪些？</h4><pre><code>父传子 使用 props 属性进行
+字传父 使用事件派发 ($emit)
+非相关组件 使用时间总线(EventBus)
+</code></pre>
+<h4 id="路由的传参方式有哪些？"><a href="#路由的传参方式有哪些？" class="headerlink" title="路由的传参方式有哪些？"></a>路由的传参方式有哪些？</h4><pre><code>使用进行路由导航，传递参数。
+使用 this.$router.push,通过配置路由属性中的 path 来确定匹配的路由，携带参数进行传参。
+使用 this.$router.push,通过配置路由属性中的 name 来确定匹配的路由，携带参数进行传参。
+使用 path 匹配路由通过 query 传参，query 传参的参数会显示在 url 地址的后面 ?id=……
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/12/%E5%85%B3%E4%BA%8EVUE/" data-id="clk9n1iy6000b74o3anb67oyr" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VUE/" rel="tag">VUE</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/06/19/VUE%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/" class="article-nav-link">
+    <strong class="article-nav-caption">Newer</strong>
+    <div class="article-nav-title">
+      
+      VUE写一个简单的Todolist
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/02/18/%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE/" class="article-nav-link">
+    <strong class="article-nav-caption">Older</strong>
+    <div class="article-nav-title">一些常用的移动端的属性设置</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>神兜兜气昂昂 &copy; 2023</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次 &nbsp;   </span>
+    <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人次</span> -->
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/shark.svg" alt="神兜兜气昂昂"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">首页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
