@@ -59,8 +59,3 @@ valine:
   avatar: 'mp'
   pageSize: '10'
   placeholder: '请输入...'
-
-# Background Music
-music:
-  enable: true
-  src: /music/qimeidi.mp3
