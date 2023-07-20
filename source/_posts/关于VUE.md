@@ -6,7 +6,10 @@ tags: VUE
 
 #### Vue 是什么？
 
-![](/images/vue-logo.svg)
+<div align="center">
+    <img src="/images/vue-logo.svg" alt="VUE" width="300" height="300">
+</div>
+
 先放一下 Vue 的官网，多读一读[Vue 官方文档](https://v2.cn.vuejs.org/)总是有好处的 ~
 
 ### 简单点来说 Vue 是一套用于构建用户界面的前端渐进式的 MVVM 开发框架。

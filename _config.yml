@@ -105,6 +105,11 @@ search:
   field: post
   content: true
 
+# 点击图片放大
+# photoswipe:
+#   enable: true
+#   cdn: //cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

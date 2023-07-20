@@ -38,6 +38,36 @@
       </tags>
   </entry>
   <entry>
+    <title>烟花</title>
+    <url>/2023/02/05/%E7%83%9F%E8%8A%B1/</url>
+    <content><![CDATA[<video controls>
+  <source src="/videos/yanhua.mp4" type="video/mp4">
+</video>
+]]></content>
+      <categories>
+        <category>烟花</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>这个王多鱼哈哈哈哈哈哈</title>
+    <url>/2022/08/21/%E7%8E%8B%E5%A4%9A%E9%B1%BC/</url>
+    <content><![CDATA[<p><img src="/images/wdy.png" alt="特别丑的log"></p>
+<p>我敢说这个<a href="https://duoyu.wang/">王多鱼</a>一定是全世界最没用的网站，如你不嫌弃可以提交自己的项目链接过去，然后等他成为百年老站以后，相信一定会有亿万富翁来投资。</p>
+<span id="more"></span>
+
+<p>这个网站设计太随意了，白菜价聘请的设计师可能有点色盲，直接上了个红配绿。 LOGO 设计也是很扯，人家王多鱼先生是西虹市首富，是亿万富翁，这设计完全一点身价十亿气质都没有。</p>
+<p><img src="/images/wdy1.png" alt="特别丑的log"></p>
+<p>链接在这：<a href="https://duoyu.wang/">duoyu.wang</a></p>
+<blockquote>
+<p>色即是空、少即是多，Less is more，所以：绿即是红，Green is red ～<br>——设计师，如是说</p>
+<p>设计的好与不好自有公众评说，反正是真能叨叨！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>王多鱼</category>
+      </categories>
+  </entry>
+  <entry>
     <title>VUE写一个简单的Todolist</title>
     <url>/2022/06/19/VUE%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/</url>
     <content><![CDATA[<h3 id="Vue之写一个简单的Todolist"><a href="#Vue之写一个简单的Todolist" class="headerlink" title="Vue之写一个简单的Todolist"></a>Vue之写一个简单的Todolist</h3><p>待办事项。效果参考网址 <a href="https://codepen.io/btc022003/pen/OdagLN">vue-todolist</a><br>示例效果中用的是 localStorage 本地存储，所以直接定义了空数组，利用数组的方式。</p>
@@ -49,7 +79,11 @@
   <entry>
     <title>关于VUE</title>
     <url>/2022/04/12/%E5%85%B3%E4%BA%8EVUE/</url>
-    <content><![CDATA[<h4 id="Vue-是什么？"><a href="#Vue-是什么？" class="headerlink" title="Vue 是什么？"></a>Vue 是什么？</h4><p><img src="/images/vue-logo.svg"><br>先放一下 Vue 的官网，多读一读<a href="https://v2.cn.vuejs.org/">Vue 官方文档</a>总是有好处的 ~</p>
+    <content><![CDATA[<h4 id="Vue-是什么？"><a href="#Vue-是什么？" class="headerlink" title="Vue 是什么？"></a>Vue 是什么？</h4><div align="center">
+    <img src="/images/vue-logo.svg" alt="VUE" width="300" height="300">
+</div>
+
+<p>先放一下 Vue 的官网，多读一读<a href="https://v2.cn.vuejs.org/">Vue 官方文档</a>总是有好处的 ~</p>
 <h3 id="简单点来说-Vue-是一套用于构建用户界面的前端渐进式的-MVVM-开发框架。"><a href="#简单点来说-Vue-是一套用于构建用户界面的前端渐进式的-MVVM-开发框架。" class="headerlink" title="简单点来说 Vue 是一套用于构建用户界面的前端渐进式的 MVVM 开发框架。"></a>简单点来说 Vue 是一套用于构建用户界面的前端渐进式的 MVVM 开发框架。</h3><span id="more"></span>
 
 <h4 id="Vue-的生命周期是什么？"><a href="#Vue-的生命周期是什么？" class="headerlink" title="Vue 的生命周期是什么？"></a>Vue 的生命周期是什么？</h4><p>Vue实例从开始创建、初始化数据、编译模板、挂载dom和渲染、更新和渲染、卸载等一系列过程，这就是Vue的生命周期</p>
