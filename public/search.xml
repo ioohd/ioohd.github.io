@@ -38,6 +38,84 @@
       </tags>
   </entry>
   <entry>
+    <title>非常实用的JavaScript一行代码</title>
+    <url>/2023/07/21/javaScript%E6%9E%81%E9%99%90%E7%9C%81%E5%AD%97%E8%8A%82/</url>
+    <content><![CDATA[<p>用简单的逻辑和尽可能少的代码行来解决一个复杂的问题。随着 ES6 箭头函数的引入，可以创建看起来优雅而简单的单行代码。</p>
+<span id="more"></span>
+
+<h1 id="日期处理"><a href="#日期处理" class="headerlink" title="日期处理"></a>日期处理</h1><blockquote>
+<h4 id="检查日期是否有效"><a href="#检查日期是否有效" class="headerlink" title="检查日期是否有效"></a>检查日期是否有效</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">isDateValid</span> = (<span class="params">...val</span>) =&gt; !<span class="title class_">Number</span>.<span class="built_in">isNaN</span>(<span class="keyword">new</span> <span class="title class_">Date</span>(...val).<span class="title function_">valueOf</span>());</span><br><span class="line"></span><br><span class="line"><span class="title function_">isDateValid</span>(<span class="string">&quot;December 17, 1995 03:24:00&quot;</span>);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="计算两个日期之间的间隔"><a href="#计算两个日期之间的间隔" class="headerlink" title="计算两个日期之间的间隔"></a>计算两个日期之间的间隔</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">dayDif</span> = (<span class="params">date1, date2</span>) =&gt; <span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="title class_">Math</span>.<span class="title function_">abs</span>(date1.<span class="title function_">getTime</span>() - date2.<span class="title function_">getTime</span>()) / <span class="number">86400000</span>)</span><br><span class="line">    </span><br><span class="line"><span class="title function_">dayDif</span>(<span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&quot;2021-11-3&quot;</span>), <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="string">&quot;2022-2-1&quot;</span>))  <span class="comment">// 90</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="查找日期位于一年中的第几天"><a href="#查找日期位于一年中的第几天" class="headerlink" title="查找日期位于一年中的第几天"></a>查找日期位于一年中的第几天</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">dayOfYear</span> = (<span class="params">date</span>) =&gt; <span class="title class_">Math</span>.<span class="title function_">floor</span>((date - <span class="keyword">new</span> <span class="title class_">Date</span>(date.<span class="title function_">getFullYear</span>(), <span class="number">0</span>, <span class="number">0</span>)) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>);</span><br><span class="line"></span><br><span class="line"><span class="title function_">dayOfYear</span>(<span class="keyword">new</span> <span class="title class_">Date</span>());   <span class="comment">// 307</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">timeFromDate</span> = date =&gt; date.<span class="title function_">toTimeString</span>().<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">8</span>);</span><br><span class="line">    </span><br><span class="line"><span class="title function_">timeFromDate</span>(<span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">2021</span>, <span class="number">11</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">30</span>, <span class="number">0</span>));  <span class="comment">// 12:30:00</span></span><br><span class="line"><span class="title function_">timeFromDate</span>(<span class="keyword">new</span> <span class="title class_">Date</span>());  <span class="comment">// 返回当前时间 09:00:00</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="字符串处理"><a href="#字符串处理" class="headerlink" title="字符串处理"></a>字符串处理</h1><blockquote>
+<h4 id="字符串首字母大写"><a href="#字符串首字母大写" class="headerlink" title="字符串首字母大写"></a>字符串首字母大写</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">capitalize</span> = str =&gt; str.<span class="title function_">charAt</span>(<span class="number">0</span>).<span class="title function_">toUpperCase</span>() + str.<span class="title function_">slice</span>(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">capitalize</span>(<span class="string">&quot;hello world&quot;</span>)  <span class="comment">// Hello world</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="翻转字符串"><a href="#翻转字符串" class="headerlink" title="翻转字符串"></a>翻转字符串</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">reverse</span> = str =&gt; str.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="title function_">reverse</span>(<span class="string">&#x27;hello world&#x27;</span>);   <span class="comment">// &#x27;dlrow olleh&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="随机字符串"><a href="#随机字符串" class="headerlink" title="随机字符串"></a>随机字符串</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">randomString</span> = (<span class="params"></span>) =&gt; <span class="title class_">Math</span>.<span class="title function_">random</span>().<span class="title function_">toString</span>(<span class="number">36</span>).<span class="title function_">slice</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="title function_">randomString</span>();</span><br></pre></td></tr></table></figure>
+
+<h1 id="数组处理"><a href="#数组处理" class="headerlink" title="数组处理"></a>数组处理</h1><blockquote>
+<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">removeDuplicates</span> = (<span class="params">arr</span>) =&gt; [...<span class="keyword">new</span> <span class="title class_">Set</span>(arr)];</span><br><span class="line"></span><br><span class="line"><span class="title function_">removeDuplicates</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>]); <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="判断数组是否为空"><a href="#判断数组是否为空" class="headerlink" title="判断数组是否为空"></a>判断数组是否为空</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">isNotEmpty</span> = arr =&gt; <span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr) &amp;&amp; arr.<span class="property">length</span> &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">isNotEmpty</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="合并两个数组"><a href="#合并两个数组" class="headerlink" title="合并两个数组"></a>合并两个数组</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">merge</span> = (<span class="params">a, b</span>) =&gt; a.<span class="title function_">concat</span>(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">merge</span> = (<span class="params">a, b</span>) =&gt; [...a, ...b];</span><br></pre></td></tr></table></figure>
+
+<h1 id="优化代码"><a href="#优化代码" class="headerlink" title="优化代码"></a>优化代码</h1><blockquote>
+<h4 id="可选链操作符"><a href="#可选链操作符" class="headerlink" title="可选链操作符 ?."></a>可选链操作符 ?.</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (res &amp;&amp; res.<span class="property">data</span> &amp;&amp; res.<span class="property">data</span>.<span class="property">success</span>) &#123;   </span><br><span class="line">   <span class="comment">//code</span></span><br><span class="line">&#125; </span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">if</span> (res?.<span class="property">data</span>?.<span class="property">success</span>) &#123;</span><br><span class="line">  <span class="comment">// code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="string">&quot;18&quot;</span></span><br><span class="line"><span class="keyword">const</span> str = (age &lt; <span class="string">&#x27;18&#x27;</span> )? <span class="string">&#x27;未成年&#x27;</span> : <span class="string">&#x27;已成年&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="带有多个条件的-if-语句"><a href="#带有多个条件的-if-语句" class="headerlink" title="带有多个条件的 if 语句"></a>带有多个条件的 if 语句</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (x === <span class="string">&#x27;abc&#x27;</span> || x === <span class="string">&#x27;def&#x27;</span> || x === <span class="string">&#x27;ghi&#x27;</span> || x ===<span class="string">&#x27;jkl&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;</span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">if</span> ([<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;def&#x27;</span>, <span class="string">&#x27;ghi&#x27;</span>, <span class="string">&#x27;jkl&#x27;</span>].<span class="title function_">includes</span>(x)) &#123;</span><br><span class="line">   <span class="comment">//code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="null、undefined-和空值检查"><a href="#null、undefined-和空值检查" class="headerlink" title="null、undefined 和空值检查"></a>null、undefined 和空值检查</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (test1 !== <span class="literal">null</span> || test1 !== <span class="literal">undefined</span> || test1 !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> test2 = test1;</span><br><span class="line">&#125;</span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">let</span> test2 = test1 || <span class="string">&#x27;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="用于多个条件判断的-操作符"><a href="#用于多个条件判断的-操作符" class="headerlink" title="用于多个条件判断的 &amp;&amp; 操作符"></a>用于多个条件判断的 &amp;&amp; 操作符</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (test1) &#123;</span><br><span class="line"> <span class="title function_">callMethod</span>(); </span><br><span class="line">&#125; </span><br><span class="line">优化后 </span><br><span class="line">test1 &amp;&amp; <span class="title function_">callMethod</span>();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">&#x27;Hi &#x27;</span> + test1 + <span class="string">&#x27; &#x27;</span> + test2 + <span class="string">&#x27;.&#x27;</span></span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">const</span> welcome = <span class="string">`Hi <span class="subst">$&#123;test1&#125;</span> <span class="subst">$&#123;test2&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> test1 = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">test1</span>;</span><br><span class="line"><span class="keyword">const</span> test2 = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">test2</span>;</span><br><span class="line"><span class="keyword">const</span> test2 = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">test3</span>;</span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">const</span> &#123; test1, test2, test3 &#125; = <span class="variable language_">this</span>.<span class="property">data</span>;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>javaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>烟花</title>
     <url>/2023/02/05/%E7%83%9F%E8%8A%B1/</url>
     <content><![CDATA[<video controls>
