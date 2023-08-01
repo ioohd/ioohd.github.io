@@ -1,5 +1,5 @@
 ---
-title: 非常实用的JavaScript一行代码
+title: 非常实用的JavaScript优雅代码
 date: 2023-07-21 15:18:29
 tags: javaScript
 ---
@@ -83,6 +83,33 @@ isNotEmpty([1, 2, 3]);  // true
 const merge = (a, b) => a.concat(b);
 
 const merge = (a, b) => [...a, ...b];
+```
+
+> #### 取数组中的最小/大值
+```js
+let arr = [22, 13, 6, 55, 30]
+
+let max = Math.max.apply(null, arr)
+let min = Math.min.apply(null, arr)
+
+console.log(max, min) // 55, 6
+```
+```js
+let array=[
+  {
+    "index_id": 119,
+    "area_id": "18335623",
+    "name": "满意度",
+    "value": "100"
+  },
+  {
+    "index_id": 119,
+    "area_id": "18335624",
+    "name": "满意度",
+    "value": "20"
+  }];
+let max = Math.max.apply(Math, array.map(function(res) {return res.value})) // 100
+let min = Math.min.apply(Math, array.map(function(res) {return res.value})) // 20
 ```
 
 # 优化代码

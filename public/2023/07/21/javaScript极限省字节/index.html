@@ -8,7 +8,7 @@
   
   
   <title>
-    非常实用的JavaScript一行代码 |
+    非常实用的JavaScript优雅代码 |
     
     神兜兜气昂昂
   </title>
@@ -46,7 +46,7 @@
       
   
   <h1 class="article-title" itemprop="name">
-    非常实用的JavaScript一行代码
+    非常实用的JavaScript优雅代码
   </h1>
   
   
@@ -116,6 +116,11 @@
 <h4 id="合并两个数组"><a href="#合并两个数组" class="headerlink" title="合并两个数组"></a>合并两个数组</h4></blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">merge</span> = (<span class="params">a, b</span>) =&gt; a.<span class="title function_">concat</span>(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">merge</span> = (<span class="params">a, b</span>) =&gt; [...a, ...b];</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<h4 id="取数组中的最小-大值"><a href="#取数组中的最小-大值" class="headerlink" title="取数组中的最小&#x2F;大值"></a>取数组中的最小&#x2F;大值</h4></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">22</span>, <span class="number">13</span>, <span class="number">6</span>, <span class="number">55</span>, <span class="number">30</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> max = <span class="title class_">Math</span>.<span class="property">max</span>.<span class="title function_">apply</span>(<span class="literal">null</span>, arr)</span><br><span class="line"><span class="keyword">let</span> min = <span class="title class_">Math</span>.<span class="property">min</span>.<span class="title function_">apply</span>(<span class="literal">null</span>, arr)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(max, min) <span class="comment">// 55, 6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">&quot;index_id&quot;</span>: <span class="number">119</span>,</span><br><span class="line">    <span class="string">&quot;area_id&quot;</span>: <span class="string">&quot;18335623&quot;</span>,</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;满意度&quot;</span>,</span><br><span class="line">    <span class="string">&quot;value&quot;</span>: <span class="string">&quot;100&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="string">&quot;index_id&quot;</span>: <span class="number">119</span>,</span><br><span class="line">    <span class="string">&quot;area_id&quot;</span>: <span class="string">&quot;18335624&quot;</span>,</span><br><span class="line">    <span class="string">&quot;name&quot;</span>: <span class="string">&quot;满意度&quot;</span>,</span><br><span class="line">    <span class="string">&quot;value&quot;</span>: <span class="string">&quot;20&quot;</span></span><br><span class="line">  &#125;];</span><br><span class="line"><span class="keyword">let</span> max = <span class="title class_">Math</span>.<span class="property">max</span>.<span class="title function_">apply</span>(<span class="title class_">Math</span>, array.<span class="title function_">map</span>(<span class="keyword">function</span>(<span class="params">res</span>) &#123;<span class="keyword">return</span> res.<span class="property">value</span>&#125;)) <span class="comment">// 100</span></span><br><span class="line"><span class="keyword">let</span> min = <span class="title class_">Math</span>.<span class="property">min</span>.<span class="title function_">apply</span>(<span class="title class_">Math</span>, array.<span class="title function_">map</span>(<span class="keyword">function</span>(<span class="params">res</span>) &#123;<span class="keyword">return</span> res.<span class="property">value</span>&#125;)) <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+
 <h1 id="优化代码"><a href="#优化代码" class="headerlink" title="优化代码"></a>优化代码</h1><blockquote>
 <h4 id="可选链操作符"><a href="#可选链操作符" class="headerlink" title="可选链操作符 ?."></a>可选链操作符 ?.</h4></blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (res &amp;&amp; res.<span class="property">data</span> &amp;&amp; res.<span class="property">data</span>.<span class="property">success</span>) &#123;   </span><br><span class="line">   <span class="comment">//code</span></span><br><span class="line">&#125; </span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">if</span> (res?.<span class="property">data</span>?.<span class="property">success</span>) &#123;</span><br><span class="line">  <span class="comment">// code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -147,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/21/javaScript%E6%9E%81%E9%99%90%E7%9C%81%E5%AD%97%E8%8A%82/" data-id="clkcafsq90007s4o302v9h1wa" class="article-share-link">
+      <a data-url="http://example.com/2023/07/21/javaScript%E6%9E%81%E9%99%90%E7%9C%81%E5%AD%97%E8%8A%82/" data-id="clkrzwp8f0007v4o3gmjyg4hk" class="article-share-link">
         Share
       </a>
       
