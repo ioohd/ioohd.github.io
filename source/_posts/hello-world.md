@@ -1,6 +1,7 @@
 ---
 title: 记录第一次搭建博客的艰苦历程
 tags: blog
+date: 2020-04-02
 top: ture
 ---
 
