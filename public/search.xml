@@ -38,6 +38,17 @@
       </tags>
   </entry>
   <entry>
+    <title>雨后的晚霞让城市爱意汹涌</title>
+    <url>/2023/08/23/%E6%9D%AD%E5%B7%9E%E6%99%9A%E9%9C%9E/</url>
+    <content><![CDATA[<video controls>
+  <source src="/videos/hangzhou_wanxia.mp4" type="video/mp4">
+</video>
+]]></content>
+      <categories>
+        <category>晚霞</category>
+      </categories>
+  </entry>
+  <entry>
     <title>非常实用的JavaScript优雅代码</title>
     <url>/2023/07/21/javaScript%E6%9E%81%E9%99%90%E7%9C%81%E5%AD%97%E8%8A%82/</url>
     <content><![CDATA[<p>用简单的逻辑和尽可能少的代码行来解决一个复杂的问题。随着 ES6 箭头函数的引入，可以创建看起来优雅而简单的单行代码。</p>
