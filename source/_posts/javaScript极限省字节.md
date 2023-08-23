@@ -112,6 +112,55 @@ let max = Math.max.apply(Math, array.map(function(res) {return res.value})) // 1
 let min = Math.min.apply(Math, array.map(function(res) {return res.value})) // 20
 ```
 
+> #### 数组排序 sort()
+  sort()方法可以对数组的元素进行排序，并且返回出排序后的数组。
+  用法：sort()默认为升序排列。 直接写sort()只能处理10以内的数字排序,处理10以上的我们需要传递一个参数，这个参数必须是函数，函数通过返回一个值来决定这两个值需不需要交换位置。 如果a-b > 0,则a和b交换位置。
+```javaScript
+ let arr = [10, 12, 11, 19, 13, 15, 6];
+
+let res1 = arr.sort(function (a, b) { return a - b; });   //实现由小到大
+console.log(res1);//[6, 10, 11, 12,13, 15, 19]
+let res2 = arr.sort(function (a, b) { return b - a; })   //实现由大到小
+console.log(res2);//[19, 15, 13, 12,11, 10,  6]
+```
+
+> #### 数组过滤 filter()
+  用法：它创建一个新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。其中函数function 为必须，数组中的每个元素都会执行这个函数。且如果返回值为true，则该元素被保留；函数可以接受三个参数（item, index, arr），第一个参数item也为必须，代表当前元素的值，第二个参数为当前元素的索引值，第三个参数为数组本身。
+```javaScript
+const arr = [
+    { name: 'song', age: 18 },
+    { name: 'Y', age: 19 },
+    { name: 'son', age: 20 },
+    { name: 'so', age: 21 }
+]
+const newArr = arr.filter((item, index, arr) => {
+    return item.age > 19
+})
+
+console.log(newArr);//[ { name: 'son', age: 20 }, { name: 'so', age: 21 } ]
+console.log(arr);//[ { name: 'song', age: 18 },{ name: 'Y', age: 19 }, { name: 'son', age: 20 }, { name: 'so', age: 21 }]
+```
+
+> #### toString()
+  toString 把数组中的每一项拿出来，用逗号隔开，组成字符串，原有数组不变。
+```javaScript
+let arr = ['song', 'Y', 'son', 'so']
+let res = arr.toString()
+console.log(res);//'song,Y,son,so'
+console.log(arr);//[ 'song', 'Y', 'son', 'so' ]
+```
+
+> #### join（分隔符）
+  join（分隔符） 把数组中的每一项拿出来，用指定的分隔符隔开，原有数组不变。
+```javaScript
+let arr = ['song', 'Y', 'son', 'so']
+let res = arr.join(',')
+console.log(res);//'song,Y,son,so'
+console.log(res.length);//13
+console.log(arr);//[ 'song', 'Y', 'son', 'so' ]
+console.log(arr.length);//4
+```
+
 # 优化代码
 
 > #### 可选链操作符 ?.
