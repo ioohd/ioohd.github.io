@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>收藏</h1>
+        <div>
+            <h2>图标</h2>
+            <div class="flex_start main">
+                <a class="flex_start container" target="_blank" href="https://feathericons.com/">
+                    <p class="img">
+                        <image src="/images/collect/feather.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">FeatherIcons</span>
+                        <span class="content_bottom_bottom">Feather矢量图标</span>
+                    </div>
+                </a>
+                <a class="flex_start container margin_left" target="_blank" href="https://remixicon.com/">
+                    <p class="img">
+                        <image src="/images/collect/remixicon.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">RemixIcon</span>
+                        <span class="content_bottom_bottom">简单的商用图标库</span>
+                    </div>
+                </a>
+                <a class="flex_start container margin_left" target="_blank" href="https://www.iconfont.cn/">
+                    <p class="img">
+                        <image src="/images/collect/alibaba.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">IconFont</span>
+                        <span class="content_bottom_bottom">阿里矢量图标库</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h2>前端</h2>
+            <div class="flex_start main">
+                <a class="flex_start container" target="_blank" href="https://cssreference.io/">
+                    <p class="img">
+                        <image src="/images/collect/css-reference.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">CSS reference</span>
+                        <span class="content_bottom_bottom">CSS 视觉指南</span>
+                    </div>
+                </a>
+                <a class="flex_start container margin_left" target="_blank" href="https://getwaves.io/">
+                    <p class="img">
+                        <image src="/images/collect/wave.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">Get Waves</span>
+                        <span class="content_bottom_bottom">波纹生成器</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h2>其他</h2>
+            <div class="flex_start main">
+                <a class="flex_start container" target="_blank" href="https://eleduck.com/">
+                    <p class="img">
+                        <image src="/images/collect/dianYa.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">电鸭社区</span>
+                        <span class="content_bottom_bottom">只工作 不上班</span>
+                    </div>
+                </a>
+                <a class="flex_start container margin_left" target="_blank" href="https://www.iloveimg.com/zh-cn">
+                    <p class="img">
+                        <image style="width: 3.2rem;height: 3.2rem;" src="/images/collect/ILoveImg.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">ILoveImg</span>
+                        <span class="content_bottom_bottom">在线图片编辑器</span>
+                    </div>
+                </a>
+                <a class="flex_start container margin_left" target="_blank" href="https://www.ilovepdf.com/zh-cn">
+                    <p class="img">
+                        <image style="width: 3.2rem;height: 3.2rem;" src="/images/collect/PDF.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">ILovePdf</span>
+                        <span class="content_bottom_bottom">PDf在线编辑器</span>
+                    </div>
+                </a>
+                <a class="flex_start container margin_top" target="_blank" href="https://duoyu.wang/">
+                    <p class="img">
+                        <image style="width: 3.2rem;height: 3.2rem;" src="/images/collect/wangDuoYu.svg" />
+                    </p>
+                    <div class="content_bottom flex_direction">
+                        <span class="content_bottom_top">王多鱼</span>
+                        <span class="content_bottom_bottom">最没用的网站</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex_start {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .flex_direction {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .margin_left {
+        margin-left: 10px;
+    }
+
+    .margin_top {
+        margin-top: 10px;
+    }
+
+    .img {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    image {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .main {
+        flex-wrap: wrap;
+    }
+
+    .container {
+        width: 220px;
+        height: 70px;
+        text-decoration: none;
+        font-size: small;
+        border: 0.1rem #e6e6e6 solid;
+        padding-left: 1rem;
+        border-radius: 5px;
+    }
+
+    .container:hover {
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 .15rem .3rem rgba(0, 0, 0, 0.4);
+        box-shadow: inset;
+        transform: translateY(-.08rem);
+    }
+
+    .content_bottom {
+        margin: 0 !important;
+        padding-left: 1.5rem;
+    }
+
+    .content_bottom_top {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: #5c6b72;
+    }
+
+    .content_bottom_bottom {
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: #adb5bd;
+    }
+</style>

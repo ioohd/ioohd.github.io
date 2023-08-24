@@ -2,6 +2,9 @@
 title: 关于ES6
 date: 2022-03-19 20:40:49
 tags: javaScript、ES6
+# photos: [
+#   ["/images/boy.jpg"]
+# ]
 ---
 
 <div style="width:200px; height: 200px; margin: 0 auto;"><image src="/images/boy.jpg"></image></div>
