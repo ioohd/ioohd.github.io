@@ -71,6 +71,15 @@ const removeDuplicates = (arr) => [...new Set(arr)];
 removeDuplicates([1, 2, 2, 3, 3, 4, 4, 5, 5, 6]); // [1, 2, 3, 4, 5, 6]
 ```
 
+> #### 数组对象去重
+去除重复的对象，对象的key值和value值都分别相等，才叫相同对象
+```js
+const uniqueObj = (arr, fn) =>arr.reduce((acc, v) => {if (!acc.some(x => fn(v, x))) acc.push(v);return acc;}, []);
+ 
+uniqueObj([{id: 1, name: '大师兄'}, {id: 2, name: '小师妹'}, {id: 1, name: '大师兄'}], (a, b) => a.id == b.id)
+// [{id: 1, name: '大师兄'}, {id: 2, name: '小师妹'}]
+```
+
 > #### 判断数组是否为空
 ```js
 const isNotEmpty = arr => Array.isArray(arr) && arr.length > 0;
@@ -224,3 +233,43 @@ const test2 = this.data.test3;
 优化后
 const { test1, test2, test3 } = this.data;
 ```
+
+> #### 网站变黑白
+有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色
+只需要将这一行代码filter:grayscale(100%)放到body上，一下就能致黑
+```css
+body {
+  filter:grayscale(100%)
+}
+```
+
+> #### 复制内容到剪切板
+使用 navigator.clipboard.writeText 来实现将文本复制到剪贴板
+```javaScript
+const copyToClipboard = (text) => navigator.clipboard.writeText(text);
+
+copyToClipboard("双十一来了~");
+```
+
+> #### 当前设备是否为苹果设备
+前端经常要兼容andriod和ios
+```javaScript
+const isAppleDevice = /Mac|iPod|iPhone|iPad/.test(navigator.platform);
+console.log(isAppleDevice);
+// Result: will return true if user is on an Apple device
+```
+
+> #### 滚动到页面顶部
+不用引入element-ui等框架，一行代码就能实现滚动到顶部
+```javaScript
+const goToTop = () => window.scrollTo(0, 0);
+goToTop();
+```
+
+> #### 判断是基数还是偶数
+```javaScript
+const isEven = num => num % 2 === 0;
+
+isEven(996); // 0 偶数 
+```
+

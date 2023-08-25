@@ -109,6 +109,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">removeDuplicates</span> = (<span class="params">arr</span>) =&gt; [...<span class="keyword">new</span> <span class="title class_">Set</span>(arr)];</span><br><span class="line"></span><br><span class="line"><span class="title function_">removeDuplicates</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">6</span>]); <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
+<h4 id="数组对象去重"><a href="#数组对象去重" class="headerlink" title="数组对象去重"></a>数组对象去重</h4><p>去除重复的对象，对象的key值和value值都分别相等，才叫相同对象</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">uniqueObj</span> = (<span class="params">arr, fn</span>) =&gt;arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, v</span>) =&gt;</span> &#123;<span class="keyword">if</span> (!acc.<span class="title function_">some</span>(<span class="function"><span class="params">x</span> =&gt;</span> <span class="title function_">fn</span>(v, x))) acc.<span class="title function_">push</span>(v);<span class="keyword">return</span> acc;&#125;, []);</span><br><span class="line"> </span><br><span class="line"><span class="title function_">uniqueObj</span>([&#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;大师兄&#x27;</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">2</span>, <span class="attr">name</span>: <span class="string">&#x27;小师妹&#x27;</span>&#125;, &#123;<span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;大师兄&#x27;</span>&#125;], <span class="function">(<span class="params">a, b</span>) =&gt;</span> a.<span class="property">id</span> == b.<span class="property">id</span>)</span><br><span class="line"><span class="comment">// [&#123;id: 1, name: &#x27;大师兄&#x27;&#125;, &#123;id: 2, name: &#x27;小师妹&#x27;&#125;]</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
 <h4 id="判断数组是否为空"><a href="#判断数组是否为空" class="headerlink" title="判断数组是否为空"></a>判断数组是否为空</h4></blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">isNotEmpty</span> = arr =&gt; <span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr) &amp;&amp; arr.<span class="property">length</span> &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">isNotEmpty</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
@@ -169,10 +174,35 @@
 <h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4></blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test1 = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">test1</span>;</span><br><span class="line"><span class="keyword">const</span> test2 = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">test2</span>;</span><br><span class="line"><span class="keyword">const</span> test2 = <span class="variable language_">this</span>.<span class="property">data</span>.<span class="property">test3</span>;</span><br><span class="line">优化后</span><br><span class="line"><span class="keyword">const</span> &#123; test1, test2, test3 &#125; = <span class="variable language_">this</span>.<span class="property">data</span>;</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<h4 id="网站变黑白"><a href="#网站变黑白" class="headerlink" title="网站变黑白"></a>网站变黑白</h4><p>有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色<br>只需要将这一行代码filter:grayscale(100%)放到body上，一下就能致黑</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>:<span class="built_in">grayscale</span>(<span class="number">100%</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="复制内容到剪切板"><a href="#复制内容到剪切板" class="headerlink" title="复制内容到剪切板"></a>复制内容到剪切板</h4><p>使用 navigator.clipboard.writeText 来实现将文本复制到剪贴板</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">copyToClipboard</span> = (<span class="params">text</span>) =&gt; navigator.<span class="property">clipboard</span>.<span class="title function_">writeText</span>(text);</span><br><span class="line"></span><br><span class="line"><span class="title function_">copyToClipboard</span>(<span class="string">&quot;双十一来了~&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="当前设备是否为苹果设备"><a href="#当前设备是否为苹果设备" class="headerlink" title="当前设备是否为苹果设备"></a>当前设备是否为苹果设备</h4><p>前端经常要兼容andriod和ios</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isAppleDevice = <span class="regexp">/Mac|iPod|iPhone|iPad/</span>.<span class="title function_">test</span>(navigator.<span class="property">platform</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(isAppleDevice);</span><br><span class="line"><span class="comment">// Result: will return true if user is on an Apple device</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="滚动到页面顶部"><a href="#滚动到页面顶部" class="headerlink" title="滚动到页面顶部"></a>滚动到页面顶部</h4><p>不用引入element-ui等框架，一行代码就能实现滚动到顶部</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">goToTop</span> = (<span class="params"></span>) =&gt; <span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"><span class="title function_">goToTop</span>();</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<h4 id="判断是基数还是偶数"><a href="#判断是基数还是偶数" class="headerlink" title="判断是基数还是偶数"></a>判断是基数还是偶数</h4></blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">isEven</span> = num =&gt; num % <span class="number">2</span> === <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="title function_">isEven</span>(<span class="number">996</span>); <span class="comment">// 0 偶数 </span></span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/21/javaScript%E6%9E%81%E9%99%90%E7%9C%81%E5%AD%97%E8%8A%82/" data-id="cllpwrc4a0008tko3h9fc4v52" class="article-share-link">
+      <a data-url="http://example.com/2023/07/21/javaScript%E6%9E%81%E9%99%90%E7%9C%81%E5%AD%97%E8%8A%82/" data-id="cllq0cmzs0009gso3fqyi80f6" class="article-share-link">
         Share
       </a>
       
