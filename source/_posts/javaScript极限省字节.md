@@ -74,9 +74,20 @@ removeDuplicates([1, 2, 2, 3, 3, 4, 4, 5, 5, 6]); // [1, 2, 3, 4, 5, 6]
 > #### 数组对象去重
 去除重复的对象，对象的key值和value值都分别相等，才叫相同对象
 ```js
-const uniqueObj = (arr, fn) =>arr.reduce((acc, v) => {if (!acc.some(x => fn(v, x))) acc.push(v);return acc;}, []);
+const uniqueObj = (arr, fn) =>
+  arr.reduce((acc, v) => {
+    if (!acc.some((x) => fn(v, x))) acc.push(v)
+    return acc
+  }, [])
  
-uniqueObj([{id: 1, name: '大师兄'}, {id: 2, name: '小师妹'}, {id: 1, name: '大师兄'}], (a, b) => a.id == b.id)
+uniqueObj(
+  [
+    { id: 1, name: '大师兄' },
+    { id: 2, name: '小师妹' },
+    { id: 1, name: '大师兄' }
+  ],
+  (a, b) => a.id == b.id
+)
 // [{id: 1, name: '大师兄'}, {id: 2, name: '小师妹'}]
 ```
 
