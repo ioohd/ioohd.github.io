@@ -181,7 +181,21 @@ console.log(arr);//[ 'song', 'Y', 'son', 'so' ]
 console.log(arr.length);//4
 ```
 
-# 优化代码
+> #### 数组扁平化
+```javaScript
+let arr = [
+    [1],
+    [2, 3],
+    [4, 5, 6, [7, 8, [9, 10, [11]]]],
+    12
+]
+// 参数指要提取嵌套数组的结构深度，默认值为 1。
+// Infinity 指递归嵌套的所有层级。
+let flattedArr = arr.flat(Infinity);
+console.log(flattedArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+```
+
+# JavaScript代码的优雅写法
 
 > #### 可选链操作符 ?.
 ```js
@@ -228,6 +242,82 @@ if (test1) {
 优化后 
 test1 && callMethod();
 ```
+
+> #### 逻辑运算符和赋值表达式（&&=，||=，??=）
+1) &&=
+逻辑与赋值运算符 x &&= y 等价于 x && (x=y)：意思是当 x 为真时，x = y。
+```js 
+let a = 1;
+let b = 0;
+
+a &&= 2;
+console.log(a); // 2
+
+b &&= 2;
+console.log(b);  // 0
+```
+2) ||=
+逻辑或赋值运算符 x ||= y 等价于 x || (x = y)：意思是仅在 x 为 false 的时候，x = y。
+```js
+const a = { duration: 50, title: '' };
+
+a.duration ||= 10;
+console.log(a.duration);  // 50
+
+a.title ||= 'title is empty.';
+console.log(a.title);  // "title is empty"
+```
+3) ??=
+逻辑空赋值运算符 x ??= y 等价于 x ?? (x = y)：意思是仅在 x 为 null 或 undefined 的时候，x = y。
+```js
+const a = { duration: 50 };
+
+a.duration ??= 10;
+console.log(a.duration);  // 50
+
+a.speed ??= 25;
+console.log(a.speed);  // 25
+```
+
+> #### Object.entries
+Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组
+```js 
+let obj = { a: 1, b: 2 }
+Object.entries(obj)   // [['a', 1], ['b', 2]]
+```
+
+> #### Object rest properties
+```js 
+let test = { a: 1, b: 2, c: 3, d: 4 }
+let {a, b, ...rest} = test;
+console.log(a);     // 1
+console.log(b);     // 2
+console.log(rest);  // { c: 3, d: 4 }
+console.log(rest.d) // 4
+```
+
+> #### Object.fromEntries
+fromEntries() 方法会把键值对列表转换成一个对象
+语法：Object.fromEntries(iterable)
+iterable: Array、Map等可迭代对象
+```js 
+let map = new Map([['a', 1], ['b', 2]]);
+let mapToObj = Object.fromEntries(map);
+console.log(mapToObj);  // {a: 1, b: 2}
+
+let arr = [['a', 1], ['b', 2]];
+let arrToObj = Object.fromEntries(arr);
+console.log(arrToObj);   // {a: 1, b: 2}
+
+let obj = {a: 1, b: 2};
+let newObj = Object.fromEntries(
+  Object.entries(obj).map(
+    ([key, val]) => [key, val * 2]
+  )
+);
+console.log(newObj);   // {a: 2, b: 4}
+```
+
 
 > #### 模板字符串
 ```js
