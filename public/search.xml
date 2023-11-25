@@ -39,7 +39,7 @@
   </entry>
   <entry>
     <title>CSS:filter 学习笔记</title>
-    <url>/2023/11/25/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/2023/11/25/CSS-filter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>个人学习 CSS:filter 过程中写的笔记，不具备任何价值。CSS 滤镜（filter）属提供的图形特效，像模糊，锐化或元素变色。过滤器通常被用于调整图片，背景和边界的渲染。FILTER URL 还不是很明白…</p>
 <span id="more"></span>
 
@@ -53,7 +53,7 @@
   </entry>
   <entry>
     <title>video微信浏览器自动播放和默认全屏</title>
-    <url>/2023/10/25/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E5%92%8C%E9%BB%98%E8%AE%A4%E5%85%A8%E5%B1%8F/</url>
+    <url>/2023/10/25/video%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E5%92%8C%E9%BB%98%E8%AE%A4%E5%85%A8%E5%B1%8F/</url>
     <content><![CDATA[<p>早期因为带宽和流量的因素，移动端浏览器禁止视频自动播放，现在 WI-FI 越来越普及，流量也便宜了，所以有些必要自动播放的，可以支持自动播放了。</p>
 <span id="more"></span>
 
