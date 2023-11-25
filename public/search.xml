@@ -38,6 +38,44 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS:filter 学习笔记</title>
+    <url>/2023/11/25/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>个人学习 CSS:filter 过程中写的笔记，不具备任何价值。CSS 滤镜（filter）属提供的图形特效，像模糊，锐化或元素变色。过滤器通常被用于调整图片，背景和边界的渲染。FILTER URL 还不是很明白…</p>
+<span id="more"></span>
+
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* URL to SVG filter */</span></span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">url</span>(<span class="string">&quot;filters.svg#filter-id&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* &lt;filter-function&gt; values */</span></span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">blur</span>(<span class="number">0px</span>);  // 高斯模糊</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">brightness</span>(<span class="number">100%</span>);  // 线性乘法，使图片看起来更亮或更暗</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">contrast</span>(<span class="number">100%</span>);  // 对比度</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">drop-shadow</span>($offset-x $offset-y $blur $spread $color);  // 阴影，相似于 <span class="attribute">box-shadow</span></span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0%</span>);  // 转换为灰度图像</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">hue-rotate</span>(<span class="number">0deg</span>);  // 色相旋转</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">invert</span>(<span class="number">0%</span>);  // 反转输入图像</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">opacity</span>(<span class="number">100%</span>);  // 不透明度</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">saturate</span>(<span class="number">100%</span>);  // 转换图像饱和度</span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">sepia</span>(<span class="number">0%</span>);  // 将图像转换为深褐色，暖色调</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Multiple filters */</span></span><br><span class="line"><span class="attribute">filter</span>: <span class="built_in">contrast</span>(<span class="number">100%</span>) <span class="built_in">brightness</span>(<span class="number">100%</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Global values */</span></span><br><span class="line"><span class="attribute">filter</span>: inherit;</span><br><span class="line"><span class="attribute">filter</span>: initial;</span><br><span class="line"><span class="attribute">filter</span>: unset;</span><br></pre></td></tr></table></figure>
+
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* gray all images by 50% and blur by 10px */</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">0.5</span>) <span class="built_in">blur</span>(<span class="number">10px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>video微信浏览器自动播放和默认全屏</title>
+    <url>/2023/10/25/%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E6%92%AD%E6%94%BE%E5%92%8C%E9%BB%98%E8%AE%A4%E5%85%A8%E5%B1%8F/</url>
+    <content><![CDATA[<p>早期因为带宽和流量的因素，移动端浏览器禁止视频自动播放，现在 WI-FI 越来越普及，流量也便宜了，所以有些必要自动播放的，可以支持自动播放了。</p>
+<span id="more"></span>
+
+<p>在移动端浏览器， <code>video</code> 在用户点击播放或者通过 <code>API video.play()</code> 触发播放时，会强制以全屏置顶的形式进行播放，设计的初衷可能是因为全屏能提供更好的用户体验。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">&quot;player&quot;</span> <span class="attr">controls</span> <span class="attr">autoplay</span> <span class="attr">x5-video-player-type</span>=<span class="string">&quot;h5&quot;</span> <span class="attr">playsinline</span>=<span class="string">&quot;true&quot;</span> <span class="attr">webkit-playsinline</span>=<span class="string">&quot;true&quot;</span> <span class="attr">x-webkit-airplay</span>=<span class="string">&quot;true&quot;</span> <span class="attr">x5-video-orientation</span>=<span class="string">&quot;portraint&quot;</span> <span class="attr">x5-video-player-fullscreen</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">&quot;...&quot;</span> <span class="attr">type</span>=<span class="string">&quot;video/mp4&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>playsinline="true" webkit-playsinline="true</code> 解决 iOS 自动播放全屏问题<br>  <code>x5-video-player-type="h5" x5-video-player-fullscreen="true"</code> 解决安卓同层级播放</p>
+</blockquote>
+<p>iOS 微信下通过 <code>WeixinJSBridgeReady</code> 事件进行自动播放</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(</span><br><span class="line">    <span class="string">&#x27;WeixinJSBridgeReady&#x27;</span>,</span><br><span class="line">    <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> video = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;player&quot;</span>);</span><br><span class="line">        video.<span class="title function_">play</span>();</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>Android 可以尝试监听 <code>touchstart</code> 事件，用户触摸屏幕后自动播放</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;touchstart&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123; </span><br><span class="line">    <span class="keyword">var</span> video = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;player&quot;</span>);</span><br><span class="line">        video.<span class="title function_">play</span>();</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <tags>
+        <tag>HTML、CSS、javaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>雨后的晚霞让城市爱意汹涌</title>
     <url>/2023/08/23/%E6%9D%AD%E5%B7%9E%E6%99%9A%E9%9C%9E/</url>
     <content><![CDATA[<video controls>
