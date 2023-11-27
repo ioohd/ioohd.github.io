@@ -8,36 +8,6 @@ tags: javaScript
 
 <!-- more -->
 
-# 日期处理
-
-> #### 检查日期是否有效
-```js
-const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
-
-isDateValid("December 17, 1995 03:24:00");  // true
-```
-
-> ####  计算两个日期之间的间隔
-```js
-const dayDif = (date1, date2) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
-    
-dayDif(new Date("2021-11-3"), new Date("2022-2-1"))  // 90
-```
-
-> #### 查找日期位于一年中的第几天
-```js
-const dayOfYear = (date) => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
-
-dayOfYear(new Date());   // 307
-```
-
-> #### 时间格式化
-```js
-const timeFromDate = date => date.toTimeString().slice(0, 8);
-    
-timeFromDate(new Date(2021, 11, 2, 12, 30, 0));  // 12:30:00
-timeFromDate(new Date());  // 返回当前时间 09:00:00
-```
 
 # 字符串处理
 
@@ -159,6 +129,10 @@ const newArr = arr.filter((item, index, arr) => {
 
 console.log(newArr);//[ { name: 'son', age: 20 }, { name: 'so', age: 21 } ]
 console.log(arr);//[ { name: 'song', age: 18 },{ name: 'Y', age: 19 }, { name: 'son', age: 20 }, { name: 'so', age: 21 }]
+
+可以使用<code>filter()</code>方法移除数组中的null、undefined、NAN等值
+let arr = [0, 1, 2, null, '', false, undefined]
+arr.filter(Boolean) // [1, 2]
 ```
 
 > #### toString()
@@ -193,6 +167,66 @@ let arr = [
 // Infinity 指递归嵌套的所有层级。
 let flattedArr = arr.flat(Infinity);
 console.log(flattedArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+```
+
+> #### 数组填充 fill()
+  <code>fill()</code>方法可以向一个已有数组中插入全部或部分相同的值。
+  <code>array.fill()</code>
+
+```javaScript
+let arr = [0, 0, 0, 0, 0]
+// 用5填充整个数组
+arr.fill(5)
+console.info(arr) // [5, 5, 5, 5, 5]
+arr.fill(0) // 重置
+
+// 用5填充索引大于等于3的元素
+arr.fill(5, 3)
+console.info(arr) // [0, 0, 0, 5, 5]
+arr.fill(0) // 重置
+```
+
+> #### 通过索引获取数组元素 at()
+
+ ```javaScript
+let arr = [0, 1, 2, 3, 4, 5]
+
+console.info(arr[arr.length -1]) // 5
+console.info(arr.at(-1)) // 5
+
+console.info(arr[arr.length -2]) // 4
+console.info(arr.at(-2)) // 4
+```
+
+# 日期处理
+
+> #### 检查日期是否有效
+```js
+const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
+
+isDateValid("December 17, 1995 03:24:00");  // true
+```
+
+> ####  计算两个日期之间的间隔
+```js
+const dayDif = (date1, date2) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)
+    
+dayDif(new Date("2021-11-3"), new Date("2022-2-1"))  // 90
+```
+
+> #### 查找日期位于一年中的第几天
+```js
+const dayOfYear = (date) => Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+
+dayOfYear(new Date());   // 307
+```
+
+> #### 时间格式化
+```js
+const timeFromDate = date => date.toTimeString().slice(0, 8);
+    
+timeFromDate(new Date(2021, 11, 2, 12, 30, 0));  // 12:30:00
+timeFromDate(new Date());  // 返回当前时间 09:00:00
 ```
 
 # JavaScript代码的优雅写法
