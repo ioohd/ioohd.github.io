@@ -369,6 +369,32 @@ const test2 = this.data.test3;
 const { test1, test2, test3 } = this.data;
 ```
 
+> #### 判断是基数还是偶数
+```javaScript
+const isEven = num => num % 2 === 0;
+
+isEven(996); // 0 偶数 
+```
+
+> #### 判断对象中是否存在某个属性
+```javaScript
+const obj = { name: "孙悟空", age: 30 };
+
+// 检查用户对象是否具有'address'属性
+const hasAddress = "address" in obj
+
+console.info(hasAddress) // false 因为用户对象中不存在'address'属性
+```
+
+> #### 动态对象键
+  用来构建键在操作后才确定的对象
+```javaScript
+const prop = "score";
+const person = { [prop]: 90 };
+
+// person 将是 { score: 90 }
+```
+
 > #### 网站变黑白
 有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色
 只需要将这一行代码filter:grayscale(100%)放到body上，一下就能致黑
@@ -401,10 +427,4 @@ const goToTop = () => window.scrollTo(0, 0);
 goToTop();
 ```
 
-> #### 判断是基数还是偶数
-```javaScript
-const isEven = num => num % 2 === 0;
-
-isEven(996); // 0 偶数 
-```
 
