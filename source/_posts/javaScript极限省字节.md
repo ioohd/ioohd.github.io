@@ -386,6 +386,36 @@ const hasAddress = "address" in obj
 console.info(hasAddress) // false 因为用户对象中不存在'address'属性
 ```
 
+> #### 判断俩个对象是否相等（包含对象数据）
+```javaScript
+  function deepEqual(obj1, obj2) {
+    // 如果两个对象是同一个对象，直接返回true
+    if (obj1 === obj2) return true;
+
+    // 如果不是对象（可能是基本类型）或其中之一为null，返回false
+    if (obj1 == null || obj2 == null || typeof obj1 !== 'object' || typeof obj2 !== 'object') {
+        return false;
+    }
+
+    // 获取对象的键
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+    const reg = /^-?\d+(\.\d+)?$/; // 支持负数和小数
+
+    // 键的数量不同，返回false
+    if (keys1.length !== keys2.length) return false;
+
+    // 遍历所有键，递归比较每个值
+    for (const key of keys1) {
+        if (!keys2.includes(key) || !deepEqual(reg.test(obj1[key]) ? Number(obj1[key]) : obj1[key], reg.test(obj2[key]) ? Number(obj2[key]) : obj2[key])) {
+            return false;
+        }
+    }
+
+    return true;
+  }
+```
+
 > #### 动态对象键
   用来构建键在操作后才确定的对象
 ```javaScript
