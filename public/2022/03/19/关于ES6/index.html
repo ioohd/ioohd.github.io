@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    关于ES6 |
+    
+    神兜兜气昂昂
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/shark.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div style="position: fixed; left: 10px; bottom: 10px; z-index: 999;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=436346833&auto=1&height=32"></iframe>
+  </div>
+</body>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article id="post-关于ES6" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+  <h1 class="article-title" itemprop="name">
+    关于ES6
+  </h1>
+  
+  
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2022/03/19/%E5%85%B3%E4%BA%8EES6/" class="article-date">
+  <time datetime="2022-03-19T12:40:49.000Z" itemprop="datePublished">2022-03-19</time>
+</a>
+      
+    </div>
+    
+
+    
+    
+<div class="tocbot"></div>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <div style="width:200px; height: 200px; margin: 0 auto;"><image src="/images/boy.jpg"></image></div>
+
+<h2 id="理解ES6"><a href="#理解ES6" class="headerlink" title="理解ES6"></a>理解ES6</h2><p>ECMAScript ，是由网景公司制定的一种脚本语言的标准化规范；最初命名为 Mocha ，后来改名为 LiveScript ，最后重命名为 JavaScript<br>ECMAScript 2015（ES2015），第 6 版，最早被称作 ECMAScript 6（ES6），添加了新的特性</p>
+<span id="more"></span>
+
+<h3 id="let、const、var的区别？"><a href="#let、const、var的区别？" class="headerlink" title="let、const、var的区别？"></a>let、const、var的区别？</h3><p><b class="textColor">作用域：</b><br>var：使用 var 声明的变量具有函数作用域，即在函数内部声明的变量在整个函数体内都可见。<br>let 和 const：使用 let 和 const 声明的变量具有块级作用域，即在 {} 块内声明的变量只在该块内有效。<br><b class="textColor">声明提升：</b><br>var：var 声明的变量会发生声明提升，即变量的声明会被提升至当前作用域的顶部，但初始化的值会保留在原位置。<br>let 和 const：虽然也会发生声明提升，但使用 let 和 const 声明的变量在初始化之前是不可访问的。<br><b class="textColor">重复声明：</b><br>var：可以重复声明同名变量，不会引发错误。<br>let 和 const：不能在同一个作用域内重复声明同名变量，否则会引发错误。<br><b class="textColor">可变性：</b><br>var 和 let：声明的变量是可变的，可以重新赋值。<br>const：声明的变量是常量，一旦赋值就不能再修改。<br><b class="textColor">全局对象属性：</b><br>var 声明的变量会成为全局对象的属性，例如在浏览器环境中是 window 的属性。<br>let 和 const 声明的变量不会成为全局对象的属性。<br><b class="textColor">临时死区：</b><br>let 和 const 声明的变量会在声明之前存在一个“临时死区”，在该区域内访问变量会引发错误。</p>
+<h3 id="箭头函数和普通函数的区别"><a href="#箭头函数和普通函数的区别" class="headerlink" title="箭头函数和普通函数的区别"></a>箭头函数和普通函数的区别</h3><p><b class="textColor">语法简洁性：</b></p>
+<ol>
+<li>箭头函数的语法更为简洁，可以在一些情况下省略大括号、return 关键字和参数括号。</li>
+<li>普通函数的语法相对繁琐，需要使用 function 关键字、大括号和参数括号。</li>
+</ol>
+<p><b class="textColor">this 绑定：</b></p>
+<ol>
+<li>箭头函数的 this 绑定是词法作用域的，它会捕获当前上下文中的 this 值，无法通过 call、apply 或 bind 改变。</li>
+<li>普通函数的 this 绑定是动态的，取决于函数的调用方式和上下文。</li>
+</ol>
+<p><b class="textColor">arguments 对象：</b></p>
+<ol>
+<li>箭头函数没有自己的 arguments 对象，它会继承外层作用域的 arguments 对象（如果有的话）。</li>
+<li>普通函数具有自己的 arguments 对象，其中包含了函数调用时传递的参数。</li>
+</ol>
+<p><b class="textColor">构造函数：</b></p>
+<ol>
+<li>箭头函数不能用作构造函数，无法通过 new 关键字实例化对象。</li>
+<li>普通函数可以用作构造函数，可以通过 new 关键字实例化对象。</li>
+</ol>
+<p><b class="textColor">递归：</b></p>
+<ol>
+<li>由于箭头函数没有自己的 arguments 对象和函数名称，所以递归调用时相对不方便。</li>
+<li>普通函数可以更方便地进行递归调用。</li>
+</ol>
+<p><b class="textColor">命名函数表达式：</b></p>
+<ol>
+<li>箭头函数不能被命名，只能使用匿名函数表达式。</li>
+<li>普通函数可以被命名，也可以使用匿名函数表达式。</li>
+</ol>
+<h3 id="扩展运算符的作用及使用场景"><a href="#扩展运算符的作用及使用场景" class="headerlink" title="扩展运算符的作用及使用场景"></a>扩展运算符的作用及使用场景</h3><p>扩展运算符）是 ES6 引入的一种语法，用于展开（拆分）可迭代对象（如数组、字符串、对象等）为独立的元素，以便在函数调用、数组字面量、对象字面量等地方使用。扩展运算符的作用和使用场景包括以下几点：</p>
+<ol>
+<li><p><b class="textColor">函数调用中的参数传递：</b>扩展运算符可以用于将一个数组展开为一个函数的参数列表，这对于传递动态数量的参数非常有用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">a, b, c</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> result = <span class="title function_">add</span>(...numbers); <span class="comment">// 等同于 add(1, 2, 3)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">数组字面量中的元素合并：</b>扩展运算符可以将一个数组的元素合并到另一个数组中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> array2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> mergedArray = [...array1, ...array2]; <span class="comment">// 合并为 [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">复制数组和对象：</b>扩展运算符可以用于浅复制数组和对象，创建一个新的数组或对象，而不是引用同一个内存地址。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> originalArray = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> copiedArray = [...originalArray]; <span class="comment">// 创建新数组，值相同但引用不同</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> originalObject = &#123; <span class="attr">key1</span>: <span class="string">&#x27;value1&#x27;</span>, <span class="attr">key2</span>: <span class="string">&#x27;value2&#x27;</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> copiedObject = &#123; ...originalObject &#125;; <span class="comment">// 创建新对象，值相同但引用不同</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">字符串转为字符数组：</b>扩展运算符可以将字符串转换为字符数组，以便逐个访问字符。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> chars = [...str]; <span class="comment">// 转为字符数组 [&#x27;h&#x27;, &#x27;e&#x27;, &#x27;l&#x27;, &#x27;l&#x27;, &#x27;o&#x27;]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">对象字面量中的属性合并：</b>扩展运算符可以将一个对象的属性合并到另一个对象中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; <span class="attr">c</span>: <span class="number">3</span>, <span class="attr">d</span>: <span class="number">4</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> mergedObject = &#123; ...obj1, ...obj2 &#125;; <span class="comment">// 合并为 &#123; a: 1, b: 2, c: 3, d: 4 &#125;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="模板字符串的使用"><a href="#模板字符串的使用" class="headerlink" title="模板字符串的使用"></a>模板字符串的使用</h3><p>模板字符串是 ES6 引入的一种字符串语法，它允许在字符串中插入变量、表达式以及换行符，使字符串的拼接和格式化更加方便。模板字符串使用反引号（）来界定字符串，并在 &#96;${}&#96;&#96; 内部插入表达式或变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;Alice&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用模板字符串插入变量和表达式</span></span><br><span class="line"><span class="keyword">const</span> greeting = <span class="string">`Hello, my name is <span class="subst">$&#123;name&#125;</span> and I am <span class="subst">$&#123;age&#125;</span> years old.`</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(greeting);</span><br><span class="line"><span class="comment">// 输出：Hello, my name is Alice and I am 30 years old.</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> multilineText = <span class="string">`</span></span><br><span class="line"><span class="string">  This is a multiline text</span></span><br><span class="line"><span class="string">  that spans across multiple lines.</span></span><br><span class="line"><span class="string">  It&#x27;s easy to format and read.</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(multilineText);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">输出：</span></span><br><span class="line"><span class="comment">This is a multiline text</span></span><br><span class="line"><span class="comment">that spans across multiple lines.</span></span><br><span class="line"><span class="comment">It&#x27;s easy to format and read.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Set方法使用场景"><a href="#Set方法使用场景" class="headerlink" title="Set方法使用场景"></a>Set方法使用场景</h3><p>Set 是 ES6 引入的一种数据结构，它类似于数组，但不允许有重复的值，且没有固定的索引。Set 内部的值是唯一的，不会存在重复的元素。Set 对象的方法和特性使它在许多场景下非常有用，以下是一些常见的 Set 方法的应用场景：</p>
+<ol>
+<li><p><b class="textColor">去重：</b>最常见的用途就是用于去除数组中的重复元素。将数组转换为 Set，再将 Set 转换回数组，就能轻松去重。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> uniqueArray = [...<span class="keyword">new</span> <span class="title class_">Set</span>(array)]; <span class="comment">// 去重后的数组：[1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">判断元素是否存在：</b>使用 Set 的 has 方法可以快速判断一个元素是否存在于集合中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(set.<span class="title function_">has</span>(<span class="number">2</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(set.<span class="title function_">has</span>(<span class="number">4</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">交集、并集、差集等操作：</b>通过将多个 Set 对象转换为数组，然后利用数组的方法进行交集、并集、差集等操作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set1 = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">const</span> set2 = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> intersection = [...set1].<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> set2.<span class="title function_">has</span>(item)); <span class="comment">// 交集：[2, 3]</span></span><br><span class="line"><span class="keyword">const</span> union = [...set1, ...set2]; <span class="comment">// 并集：[1, 2, 3, 4]</span></span><br><span class="line"><span class="keyword">const</span> difference = [...set1].<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> !set2.<span class="title function_">has</span>(item)); <span class="comment">// 差集：[1]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">存储任意类型的数据：</b>Set 可以存储任意类型的数据，包括基本数据类型和对象等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mixedSet = <span class="keyword">new</span> <span class="title class_">Set</span>();</span><br><span class="line">mixedSet.<span class="title function_">add</span>(<span class="number">1</span>);</span><br><span class="line">mixedSet.<span class="title function_">add</span>(<span class="string">&#x27;hello&#x27;</span>);</span><br><span class="line">mixedSet.<span class="title function_">add</span>(&#123; <span class="attr">key</span>: <span class="string">&#x27;value&#x27;</span> &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><b class="textColor">迭代：</b>使用 for…of 循环可以迭代 Set 中的每个元素，且顺序与添加顺序一致。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> set) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Object-assign和扩展运算符是浅拷贝还是深拷贝？"><a href="#Object-assign和扩展运算符是浅拷贝还是深拷贝？" class="headerlink" title="Object.assign和扩展运算符是浅拷贝还是深拷贝？"></a>Object.assign和扩展运算符是浅拷贝还是深拷贝？</h3><p>Object.assign 方法和扩展运算符都是进行浅拷贝，而不是深拷贝。<br><b class="textColor">浅拷贝</b>是指在拷贝对象时，只拷贝对象的一层属性，而不会递归地拷贝嵌套对象的属性。拷贝后的对象和原始对象会共享嵌套对象的引用。<br><b class="textColor">深拷贝</b>是指在拷贝对象时，会递归地拷贝所有嵌套对象的属性，从而创建一个完全独立的副本，两者之间没有引用关系。<br><b class="textColor">使用 Object.assign 进行浅拷贝：</b></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> originalObj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> copiedObj = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, originalObj);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copiedObj); <span class="comment">// &#123; a: 1, b: &#123; c: 2 &#125; &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copiedObj === originalObj); <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copiedObj.<span class="property">b</span> === originalObj.<span class="property">b</span>); <span class="comment">// true，嵌套对象的引用相同</span></span><br></pre></td></tr></table></figure>
+<p><b class="textColor">使用扩展运算符进行浅拷贝：</b></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> originalObj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: &#123; <span class="attr">c</span>: <span class="number">2</span> &#125; &#125;;</span><br><span class="line"><span class="keyword">const</span> copiedObj = &#123; ...originalObj &#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copiedObj); <span class="comment">// &#123; a: 1, b: &#123; c: 2 &#125; &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copiedObj === originalObj); <span class="comment">// false</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(copiedObj.<span class="property">b</span> === originalObj.<span class="property">b</span>); <span class="comment">// true，嵌套对象的引用相同</span></span><br></pre></td></tr></table></figure>
+
+
+
+<style>
+.textColor {
+    color:#ff502c;
+}
+</style>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/19/%E5%85%B3%E4%BA%8EES6/" data-id="cm3mssjbl000jrco3gy3eb958" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript%E3%80%81ES6/" rel="tag">javaScript、ES6</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+  
+<nav class="article-nav">
+  
+  <a href="/2022/04/12/%E5%85%B3%E4%BA%8EVUE/" class="article-nav-link">
+    <strong class="article-nav-caption">上一篇</strong>
+    <div class="article-nav-title">
+      
+      关于VUE
+      
+    </div>
+  </a>
+  
+  
+  <a href="/2022/02/18/%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE/" class="article-nav-link">
+    <strong class="article-nav-caption">下一篇</strong>
+    <div class="article-nav-title">一些常用的移动端的属性设置</div>
+  </a>
+  
+</nav>
+
+  
+
+  
+  
+  
+  
+
+</article>
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>神兜兜气昂昂 &copy; 2024</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
+    </ul>
+    <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次 &nbsp;   </span>
+    <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人次</span> -->
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/shark.svg" alt="神兜兜气昂昂"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">首页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery/index.html">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/collect/index.html">收藏</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  });
+</script>
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
