@@ -4,11 +4,11 @@ date: 2022-04-12 18:23:34
 tags: VUE
 ---
 
-#### Vue 是什么？
+### Vue 是什么？
 
-<div align="center">
+<!-- <div align="center">
     <img src="/images/vue-logo.svg" alt="VUE" width="300" height="300">
-</div>
+</div> -->
 
 先放一下 Vue 的官网，多读一读[Vue 官方文档](https://v2.cn.vuejs.org/)总是有好处的 ~
 

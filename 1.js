@@ -31,5 +31,5 @@ const uniqueObj = (arr) => {
         // 如果不存在，则将当前对象添加到acc中
         if (!exists) acc.push(current)
         return acc
-    }, [])
+    }, []);
 }

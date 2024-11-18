@@ -1,5 +1,5 @@
 ---
-title: 非常实用的JavaScript优雅代码
+title: javaScript之能用一行代码解决的，绝不用俩行
 date: 2023-07-21 15:18:29
 tags: javaScript
 ---
