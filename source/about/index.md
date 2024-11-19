@@ -3,7 +3,7 @@ title: About
 date: 2020-06-01
 ---
 
-#### 本人长得老帅了，不信你看下边！！！
+#### 本人很帅，不信你看下边！
 
 <div  class="img">
     <img src="/images/black-me.jpg" alt="帅的雅痞" width="250" height="250">

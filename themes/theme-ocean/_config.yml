@@ -2,7 +2,8 @@
 menu:
   首页: /
   归档: /archives
-  相册: /gallery/index.html
+  # 相册: /gallery/index.html
+  相册: /album
   收藏: /collect/index.html
   关于: /about
 rss: /atom.xml
