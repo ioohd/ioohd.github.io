@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <title>
+    Archives: 2024/1 |
+    
+    神兜兜气昂昂
+  </title>
+  <!-- Icon -->
+  
+    <link rel="shortcut icon" href="/images/shark.ico">
+    
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body>
+  <div style="position: fixed; left: 10px; bottom: 10px; z-index: 999;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=436346833&auto=1&height=32"></iframe>
+  </div>
+</body>
+
+<body>
+  <main class="content">
+    <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title">2024/1</h1>
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2024" class="archive-year">2024</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  
+  
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      
+  
+  <h2 class="archive-article-title" itemprop="name">
+    <a href="/2024/01/19/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%BB%8F%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9A%84%E6%AD%A3%E5%88%99%E4%BB%A5%E5%8F%8A%E8%84%B1%E6%95%8F%E6%96%B9%E6%B3%95/">项目中经常用到的正则以及脱敏方法</a>
+  </h2>
+  
+  
+
+      <a href="/2024/01/19/%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%BB%8F%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9A%84%E6%AD%A3%E5%88%99%E4%BB%A5%E5%8F%8A%E8%84%B1%E6%95%8F%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  <time datetime="2024-01-18T16:00:00.000Z" itemprop="datePublished">01/19</time>
+</a>
+    </header>
+    
+      <p>日常开发时，经常会用到需要正则校验的规则或者一些脱敏方法，所以自己整理了一份，方便以后查阅。</p>
+<h4 id="前端字符串转义"><a href="#前端字符串转义" class="headerlink" title="前端字符串转义"></a>前端字符串转义</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">escapeHtml</span> = (<span class="params">str</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [</span><br><span class="line">        <span class="string">&#x27;le&#x27;</span>: <span class="string">&#x27;&lt;=&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;lt&#x27;</span>: <span class="string">&#x27;&gt;=&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;gt&#x27;</span>: <span class="string">&#x27;&gt;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;ge&#x27;</span>: <span class="string">&#x27;&lt;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;amp&#x27;</span>: <span class="string">&#x27;&amp;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;quot&#x27;</span>: <span class="string">&#x27;&quot;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;lsquo&#x27;</span>: <span class="string">&#x27;‘&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;rsquo&#x27;</span>: <span class="string">&#x27;’&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;ldquo&#x27;</span>: <span class="string">&#x27;“&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;rdquo&#x27;</span>: <span class="string">&#x27;”&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;middot&#x27;</span>: <span class="string">&#x27;·&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;nbsp&#x27;</span>: <span class="string">&#x27; &#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;iexcl&#x27;</span>: <span class="string">&#x27;¡&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;cent&#x27;</span>: <span class="string">&#x27;¢&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;pound&#x27;</span>: <span class="string">&#x27;£&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;mdash&#x27;</span>: <span class="string">&#x27;—&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;hellip&#x27;</span>: <span class="string">&#x27;…&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;infinity&#x27;</span>: <span class="string">&#x27;∞&#x27;</span></span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">if</span> (str &amp;&amp; str.<span class="property">replace</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> str.<span class="title function_">replace</span>(<span class="regexp">/&amp;(le|lt|gt|ge|amp|quot|lsquo|rsquo|ldquo|rdquo|middot|nbsp|iexcl|cent|pound|mdash|hellip|infinity);/ig</span>, <span class="function">(<span class="params">all, t</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> arr[t]</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> str</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    
+    
+  </div>
+
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
+
+  
+</section>
+    <footer class="footer">
+  <div class="outer">
+    <ul class="list-inline">
+      <li>神兜兜气昂昂 &copy; 2024</li>
+      
+        <li>
+          
+            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
+            
+        </li>
+      
+      <!-- <li> <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">Ocean</a></li> -->
+      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
+      <!-- <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li> -->
+    </ul>
+    <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次 &nbsp;   </span>
+    <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人次</span> -->
+    <p><ul class="list-inline">
+  
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul></p>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/shark.svg" alt="神兜兜气昂昂"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">首页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/album">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/collect/index.html">收藏</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="fe fe-feed"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>

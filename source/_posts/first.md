@@ -2,7 +2,7 @@
 title: 记录第一次搭建博客的艰苦历程
 tags: blog
 date: 2020-04-02
-top: ture
+top: true
 ---
 
 #### 我为什么要搭建一篇博客？
@@ -34,7 +34,7 @@ hexo init 博客名称
 ### 创建一个文件进行编写博客
 
 ``` bash
-hexo new "My blog"
+hexo new "My blog
 ```
 
 ### 本地启动博客 --- Run server
