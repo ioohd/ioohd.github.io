@@ -1,7 +1,9 @@
 ---
-title: javaScript之能用一行代码解决的，绝不用俩行
-date: 2023-07-21 15:18:29
-tags: javaScript
+title: javaScript之能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）
+date: 2024-12-05
+updated: 2024-12-05
+tags: javaScript、css
+top: true
 ---
 
 用简单的逻辑和尽可能少的代码行来解决一个复杂的问题。随着 ES6 箭头函数的引入，可以创建看起来优雅而简单的单行代码。
