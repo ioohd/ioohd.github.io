@@ -1,3 +1,9 @@
 <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
+  <!-- 显示文章配置项日期 -->
   <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
+  
+  <!-- 显示当前日期 -->
+  <!-- <time datetime="<%= new Date().toISOString() %>">
+    <%= new Date().toLocaleDateString() %>
+  </time> -->
 </a>

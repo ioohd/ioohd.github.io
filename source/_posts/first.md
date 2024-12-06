@@ -75,3 +75,10 @@ hexo clean
 hexo clean && hexo g
 ```
 
+### 更新文章最新日期
+
+```node
+node update-date.js <文章名>.md
+例如：node update-date.js javaScript.md
+```
+
