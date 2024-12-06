@@ -1,7 +1,7 @@
 ---
 title: javaScript之能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）
 date: 2024-12-05
-updated: 2024-12-06T02:24:16.235Z
+updated: 2024-12-06T02:50:43.022Z
 tags: javaScript、css
 top: true
 ---
