@@ -1,5 +1,5 @@
 ---
-title: javaScript之能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）
+title: 能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）
 date: 2024-12-05
 updated: 2024-12-06T02:50:43.022Z
 tags: javaScript、css
@@ -436,6 +436,14 @@ const person = { [prop]: 90 };
 ```css
 body {
   filter: grayscale(100%)
+}
+```
+
+### clamp函数
+把一个值限制在一个上限和下限之间，当这个值超过最小值和最大值范围时，在最小值和最大值之间选择一个使用
+```css
+div {
+  font-size: clamp(10px, 3vw, 16px);
 }
 ```
 

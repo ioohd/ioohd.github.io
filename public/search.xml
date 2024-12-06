@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>javaScript之能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）</title>
+    <title>能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）</title>
     <url>/2024/12/05/javaScript/</url>
     <content><![CDATA[<p>用简单的逻辑和尽可能少的代码行来解决一个复杂的问题。随着 ES6 箭头函数的引入，可以创建看起来优雅而简单的单行代码。</p>
 <span id="more"></span>
@@ -91,6 +91,9 @@
 
 <h3 id="网站变黑白"><a href="#网站变黑白" class="headerlink" title="网站变黑白"></a>网站变黑白</h3><p>有时候网站在某种特定的情况下，需要使整个网站变成黑白的颜色<br>只需要将这一行代码filter:grayscale(100%)放到body上，一下就能致黑</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">grayscale</span>(<span class="number">100%</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="clamp函数"><a href="#clamp函数" class="headerlink" title="clamp函数"></a>clamp函数</h3><p>把一个值限制在一个上限和下限之间，当这个值超过最小值和最大值范围时，在最小值和最大值之间选择一个使用</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="built_in">clamp</span>(<span class="number">10px</span>, <span class="number">3vw</span>, <span class="number">16px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="复制内容到剪切板"><a href="#复制内容到剪切板" class="headerlink" title="复制内容到剪切板"></a>复制内容到剪切板</h3><p>使用 navigator.clipboard.writeText 来实现将文本复制到剪贴板</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">copyToClipboard</span> = (<span class="params">text</span>) =&gt; navigator.<span class="property">clipboard</span>.<span class="title function_">writeText</span>(text);</span><br><span class="line"></span><br><span class="line"><span class="title function_">copyToClipboard</span>(<span class="string">&quot;双十一来了~&quot;</span>);</span><br></pre></td></tr></table></figure>
