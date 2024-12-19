@@ -327,15 +327,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VUE写一个简单的Todolist</title>
-    <url>/2022/06/19/VUE%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84Todolist/</url>
-    <content><![CDATA[<h3 id="Vue之写一个简单的Todolist"><a href="#Vue之写一个简单的Todolist" class="headerlink" title="Vue之写一个简单的Todolist"></a>Vue之写一个简单的Todolist</h3><p>待办事项。效果参考网址 <a href="https://codepen.io/btc022003/pen/OdagLN">vue-todolist</a><br>示例效果中用的是 localStorage 本地存储，所以直接定义了空数组，利用数组的方式。</p>
-]]></content>
-      <tags>
-        <tag>VUE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于VUE</title>
     <url>/2022/04/12/%E5%85%B3%E4%BA%8EVUE/</url>
     <content><![CDATA[<h3 id="Vue-是什么？"><a href="#Vue-是什么？" class="headerlink" title="Vue 是什么？"></a>Vue 是什么？</h3><!-- <div align="center">
