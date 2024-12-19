@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）</title>
+    <title>记录日常开发经常用到的方法（持续更新）</title>
     <url>/2024/12/05/javaScript/</url>
     <content><![CDATA[<p>用简单的逻辑和尽可能少的代码行来解决一个复杂的问题。随着 ES6 箭头函数的引入，可以创建看起来优雅而简单的单行代码。</p>
 <span id="more"></span>
@@ -29,7 +29,7 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"> <span class="keyword">let</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">11</span>, <span class="number">19</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res1 = arr.<span class="title function_">sort</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123; <span class="keyword">return</span> a - b; &#125;);   <span class="comment">//实现由小到大</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res1);<span class="comment">//[6, 10, 11, 12,13, 15, 19]</span></span><br><span class="line"><span class="keyword">let</span> res2 = arr.<span class="title function_">sort</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123; <span class="keyword">return</span> b - a; &#125;)   <span class="comment">//实现由大到小</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res2);<span class="comment">//[19, 15, 13, 12,11, 10,  6]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="数组过滤-filter"><a href="#数组过滤-filter" class="headerlink" title="数组过滤 filter()"></a>数组过滤 filter()</h3><p>  用法：它创建一个新数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。其中函数function 为必须，数组中的每个元素都会执行这个函数。且如果返回值为true，则该元素被保留；函数可以接受三个参数（item, index, arr），第一个参数item也为必须，代表当前元素的值，第二个参数为当前元素的索引值，第三个参数为数组本身。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;song&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;Y&#x27;</span>, <span class="attr">age</span>: <span class="number">19</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;son&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;so&#x27;</span>, <span class="attr">age</span>: <span class="number">21</span> &#125;</span><br><span class="line">]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">filter</span>(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item.<span class="property">age</span> &gt; <span class="number">19</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArr);<span class="comment">//[ &#123; name: &#x27;son&#x27;, age: 20 &#125;, &#123; name: &#x27;so&#x27;, age: 21 &#125; ]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);<span class="comment">//[ &#123; name: &#x27;song&#x27;, age: 18 &#125;,&#123; name: &#x27;Y&#x27;, age: 19 &#125;, &#123; name: &#x27;son&#x27;, age: 20 &#125;, &#123; name: &#x27;so&#x27;, age: 21 &#125;]</span></span><br><span class="line"></span><br><span class="line">可以使用&lt;code&gt;<span class="title function_">filter</span>()&lt;/code&gt;方法移除数组中的<span class="literal">null</span>、<span class="literal">undefined</span>、<span class="variable constant_">NAN</span>等值</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="literal">null</span>, <span class="string">&#x27;&#x27;</span>, <span class="literal">false</span>, <span class="literal">undefined</span>]</span><br><span class="line">arr.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>) <span class="comment">// [1, 2]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;song&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;Y&#x27;</span>, <span class="attr">age</span>: <span class="number">19</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;son&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">&#x27;so&#x27;</span>, <span class="attr">age</span>: <span class="number">21</span> &#125;</span><br><span class="line">]</span><br><span class="line"><span class="keyword">const</span> newArr = arr.<span class="title function_">filter</span>(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> item.<span class="property">age</span> &gt; <span class="number">19</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(newArr);<span class="comment">//[ &#123; name: &#x27;son&#x27;, age: 20 &#125;, &#123; name: &#x27;so&#x27;, age: 21 &#125; ]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);<span class="comment">//[ &#123; name: &#x27;song&#x27;, age: 18 &#125;,&#123; name: &#x27;Y&#x27;, age: 19 &#125;, &#123; name: &#x27;son&#x27;, age: 20 &#125;, &#123; name: &#x27;so&#x27;, age: 21 &#125;]</span></span><br><span class="line"></span><br><span class="line">可以使用<span class="title function_">filter</span>()方法移除数组中的<span class="literal">null</span>、<span class="literal">undefined</span>、<span class="variable constant_">NAN</span>等值</span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="literal">null</span>, <span class="string">&#x27;&#x27;</span>, <span class="literal">false</span>, <span class="literal">undefined</span>]</span><br><span class="line">arr.<span class="title function_">filter</span>(<span class="title class_">Boolean</span>) <span class="comment">// [1, 2]</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>  toString 把数组中的每一项拿出来，用逗号隔开，组成字符串，原有数组不变。</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">&#x27;song&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;son&#x27;</span>, <span class="string">&#x27;so&#x27;</span>]</span><br><span class="line"><span class="keyword">let</span> res = arr.<span class="title function_">toString</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(res);<span class="comment">//&#x27;song,Y,son,so&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(arr);<span class="comment">//[ &#x27;song&#x27;, &#x27;Y&#x27;, &#x27;son&#x27;, &#x27;so&#x27; ]</span></span><br></pre></td></tr></table></figure>
@@ -111,61 +111,29 @@
       </tags>
   </entry>
   <entry>
-    <title>这个王多鱼哈哈哈哈哈哈</title>
-    <url>/2022/08/21/%E7%8E%8B%E5%A4%9A%E9%B1%BC/</url>
-    <content><![CDATA[<p><img src="/images/wdy.png" alt="特别丑的log"></p>
-<p>我敢说这个<a href="https://duoyu.wang/">王多鱼</a>一定是全世界最没用的网站，如你不嫌弃可以提交自己的项目链接过去，然后等他成为百年老站以后，相信一定会有亿万富翁来投资。</p>
+    <title>有的是时间</title>
+    <url>/2024/12/19/%E6%9C%89%E7%9A%84%E6%98%AF%E6%97%B6%E9%97%B4/</url>
+    <content><![CDATA[<p><strong>摘自 舒远《有的是时间》</strong></p>
+<hr>
+<p>我沿着马路慢慢走回了家，晒着太阳，慢慢地走，风有点大，莫名的想起那句：“去想无关紧要的事，去想想风吧。”</p>
+<p><img src="/images/YouDeShiShiJian1.jpg" alt="有的是时间"></p>
 <span id="more"></span>
 
-<p>这个网站设计太随意了，白菜价聘请的设计师可能有点色盲，直接上了个红配绿。 LOGO 设计也是很扯，人家王多鱼先生是西虹市首富，是亿万富翁，这设计完全一点身价十亿气质都没有。</p>
-<p><img src="/images/wdy1.png" alt="特别丑的log"></p>
-<p>链接在这：<a href="https://duoyu.wang/">duoyu.wang</a></p>
-<blockquote>
-<p>色即是空、少即是多，Less is more，所以：绿即是红，Green is red ～<br>——设计师，如是说</p>
-<p>设计的好与不好自有公众评说，反正是真能叨叨！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>王多鱼</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>记录第一次搭建博客的艰苦历程</title>
-    <url>/2020/04/02/first/</url>
-    <content><![CDATA[<h4 id="我为什么要搭建一篇博客？"><a href="#我为什么要搭建一篇博客？" class="headerlink" title="我为什么要搭建一篇博客？"></a>我为什么要搭建一篇博客？</h4><blockquote>
-<p>之前在学习的过程中，遇到过的很多问题，基本上都是通过百度解决的，然后也见了很多人搭建了自己博客，并且每个人的博客对于他们来说的作用都不一样，我决定搭建一个博客也是觉得我的学习历程可以被记录下来，也可以分享一些出去游玩的东西。</p>
-<p>也有出于挑战一下的心态，我选了 hexo 加 github 搭建博客，hexo 还没接触过，但是知道这样搭建的博客还是基于 node.js 的，同时也希望在搭建的过程中学习到一些新的东西。</p>
-<p>反正挺酷的！</p>
-</blockquote>
-<p>编写博客使用的几乎全是Markdown语法，先给不知道怎么写的小伙伴上个链接~<a href="http://markdown.p2hp.com/basic-syntax/">Markdown官网</a></p>
-<p>我也在网上扒拉了一篇，也可以看看<a href="https://blog.csdn.net/u014061630/article/details/81359144?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168967454716800197084944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168967454716800197084944&biz_id=0&utm_medium=distribute.pc_chrome_plugin_search_result.none-task-blog-2~all~top_positive~default-1-81359144-null-null.nonecase&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2226.3001.4187">语法图文全面详解</a></p>
-<span id="more"></span>
-
-<h2 id="安装hexo包"><a href="#安装hexo包" class="headerlink" title="安装hexo包"></a>安装hexo包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建一个hexo博客"><a href="#创建一个hexo博客" class="headerlink" title="创建一个hexo博客"></a>创建一个hexo博客</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init 博客名称</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建一个文件进行编写博客"><a href="#创建一个文件进行编写博客" class="headerlink" title="创建一个文件进行编写博客"></a>创建一个文件进行编写博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My blog</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地启动博客-—-Run-server"><a href="#本地启动博客-—-Run-server" class="headerlink" title="本地启动博客 — Run server"></a>本地启动博客 — Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server (hexo s)</span><br></pre></td></tr></table></figure>
-
-<h3 id="打包为静态文件"><a href="#打包为静态文件" class="headerlink" title="打包为静态文件"></a>打包为静态文件</h3><p>hexo g 命令执行后会生成一个public文件下，这个文件夹便是打包后生成的静态文件夹。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate (hexo g)</span><br></pre></td></tr></table></figure>
-
-<h3 id="推送至github"><a href="#推送至github" class="headerlink" title="推送至github"></a>推送至github</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>这里也可以使用git命令行来推送至远程仓库（敲命令行主要是帅！！！帅就完了啊哈哈哈哈哈哈哈哈）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;提交备注&#x27;</span></span><br><span class="line">git pull</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="清空博客缓存"><a href="#清空博客缓存" class="headerlink" title="清空博客缓存"></a>清空博客缓存</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除本地项目并重新生成-（重新部署时使用）"><a href="#清除本地项目并重新生成-（重新部署时使用）" class="headerlink" title="清除本地项目并重新生成 （重新部署时使用）"></a>清除本地项目并重新生成 （重新部署时使用）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新文章最新日期"><a href="#更新文章最新日期" class="headerlink" title="更新文章最新日期"></a>更新文章最新日期</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node update-date.js &lt;文章名&gt;.md</span><br><span class="line">例如：node update-date.js javaScript.md</span><br></pre></td></tr></table></figure>
-
+<p>让他用“如果······就好了”造句</p>
+<p>他说：“如果你是一只猫就好了”</p>
+<p>我问他：“为啥？”</p>
+<p>他说：“猫的心思藏不住。”</p>
+<p>今天他说我：“你是瓜子脸。”</p>
+<p>我一听，心花怒放。</p>
+<p>“真的吗？”还忍不住问。</p>
+<p>“真的”</p>
+<p>我开始乐。</p>
+<p>接着又听他说道：“西瓜籽。”</p>
+<p>我：“··············”</p>
+<p><img src="/images/YouDeShiShiJian2.png" alt="有的是时间"></p>
 ]]></content>
       <tags>
-        <tag>blog</tag>
+        <tag>有的是时间</tag>
       </tags>
   </entry>
   <entry>
@@ -299,6 +267,25 @@
       <tags>
         <tag>element、vue</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>这个王多鱼哈哈哈哈哈哈</title>
+    <url>/2022/08/21/%E7%8E%8B%E5%A4%9A%E9%B1%BC/</url>
+    <content><![CDATA[<p><img src="/images/wdy.png" alt="特别丑的log"></p>
+<p>我敢说这个<a href="https://duoyu.wang/">王多鱼</a>一定是全世界最没用的网站，如你不嫌弃可以提交自己的项目链接过去，然后等他成为百年老站以后，相信一定会有亿万富翁来投资。</p>
+<span id="more"></span>
+
+<p>这个网站设计太随意了，白菜价聘请的设计师可能有点色盲，直接上了个红配绿。 LOGO 设计也是很扯，人家王多鱼先生是西虹市首富，是亿万富翁，这设计完全一点身价十亿气质都没有。</p>
+<p><img src="/images/wdy1.png" alt="特别丑的log"></p>
+<p>链接在这：<a href="https://duoyu.wang/">duoyu.wang</a></p>
+<blockquote>
+<p>色即是空、少即是多，Less is more，所以：绿即是红，Green is red ～<br>——设计师，如是说</p>
+<p>设计的好与不好自有公众评说，反正是真能叨叨！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>王多鱼</category>
+      </categories>
   </entry>
   <entry>
     <title>vue简单的全局mixin</title>
@@ -649,6 +636,45 @@
 ]]></content>
       <tags>
         <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录第一次搭建博客的艰苦历程</title>
+    <url>/2020/04/02/first/</url>
+    <content><![CDATA[<h4 id="我为什么要搭建一篇博客？"><a href="#我为什么要搭建一篇博客？" class="headerlink" title="我为什么要搭建一篇博客？"></a>我为什么要搭建一篇博客？</h4><blockquote>
+<p>之前在学习的过程中，遇到过的很多问题，基本上都是通过百度解决的，然后也见了很多人搭建了自己博客，并且每个人的博客对于他们来说的作用都不一样，我决定搭建一个博客也是觉得我的学习历程可以被记录下来，也可以分享一些出去游玩的东西。</p>
+<p>也有出于挑战一下的心态，我选了 hexo 加 github 搭建博客，hexo 还没接触过，但是知道这样搭建的博客还是基于 node.js 的，同时也希望在搭建的过程中学习到一些新的东西。</p>
+<p>反正挺酷的！</p>
+</blockquote>
+<p>编写博客使用的几乎全是Markdown语法，先给不知道怎么写的小伙伴上个链接~<a href="http://markdown.p2hp.com/basic-syntax/">Markdown官网</a></p>
+<p>我也在网上扒拉了一篇，也可以看看<a href="https://blog.csdn.net/u014061630/article/details/81359144?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168967454716800197084944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168967454716800197084944&biz_id=0&utm_medium=distribute.pc_chrome_plugin_search_result.none-task-blog-2~all~top_positive~default-1-81359144-null-null.nonecase&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2226.3001.4187">语法图文全面详解</a></p>
+<span id="more"></span>
+
+<h2 id="安装hexo包"><a href="#安装hexo包" class="headerlink" title="安装hexo包"></a>安装hexo包</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建一个hexo博客"><a href="#创建一个hexo博客" class="headerlink" title="创建一个hexo博客"></a>创建一个hexo博客</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init 博客名称</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建一个文件进行编写博客"><a href="#创建一个文件进行编写博客" class="headerlink" title="创建一个文件进行编写博客"></a>创建一个文件进行编写博客</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My blog</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="本地启动博客-—-Run-server"><a href="#本地启动博客-—-Run-server" class="headerlink" title="本地启动博客 — Run server"></a>本地启动博客 — Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server (hexo s)</span><br></pre></td></tr></table></figure>
+
+<h3 id="打包为静态文件"><a href="#打包为静态文件" class="headerlink" title="打包为静态文件"></a>打包为静态文件</h3><p>hexo g 命令执行后会生成一个public文件下，这个文件夹便是打包后生成的静态文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate (hexo g)</span><br></pre></td></tr></table></figure>
+
+<h3 id="推送至github"><a href="#推送至github" class="headerlink" title="推送至github"></a>推送至github</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这里也可以使用git命令行来推送至远程仓库（敲命令行主要是帅！！！帅就完了啊哈哈哈哈哈哈哈哈）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;提交备注&#x27;</span></span><br><span class="line">git pull</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="清空博客缓存"><a href="#清空博客缓存" class="headerlink" title="清空博客缓存"></a>清空博客缓存</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除本地项目并重新生成-（重新部署时使用）"><a href="#清除本地项目并重新生成-（重新部署时使用）" class="headerlink" title="清除本地项目并重新生成 （重新部署时使用）"></a>清除本地项目并重新生成 （重新部署时使用）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新文章最新日期"><a href="#更新文章最新日期" class="headerlink" title="更新文章最新日期"></a>更新文章最新日期</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node update-date.js &lt;文章名&gt;.md</span><br><span class="line">例如：node update-date.js javaScript.md</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
 </search>

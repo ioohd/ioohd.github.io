@@ -1,5 +1,5 @@
 ---
-title: 能用一行代码解决的，绝不用俩行，以及平常可能会用到的方法（持续更新）
+title: 记录日常开发经常用到的方法（持续更新）
 date: 2024-12-05
 updated: 2024-12-06T02:50:43.022Z
 tags: javaScript、css
@@ -135,7 +135,7 @@ const newArr = arr.filter((item, index, arr) => {
 console.log(newArr);//[ { name: 'son', age: 20 }, { name: 'so', age: 21 } ]
 console.log(arr);//[ { name: 'song', age: 18 },{ name: 'Y', age: 19 }, { name: 'son', age: 20 }, { name: 'so', age: 21 }]
 
-可以使用<code>filter()</code>方法移除数组中的null、undefined、NAN等值
+可以使用filter()方法移除数组中的null、undefined、NAN等值
 let arr = [0, 1, 2, null, '', false, undefined]
 arr.filter(Boolean) // [1, 2]
 ```

@@ -8,7 +8,6 @@
   
   
   <title>
-    记录第一次搭建博客的艰苦历程 |
     
     神兜兜气昂昂
   </title>
@@ -36,8 +35,41 @@
 
 <body>
   <main class="content">
-    <section class="outer">
-  <article id="post-first" class="article article-type-post" itemscope
+    <section class="jumbotron">
+  <div class="video">
+    
+    <div class="video-frame">
+      <img src="/images/ocean/overlay-hero.png" alt="Decorative image frame">
+    </div>
+    
+    <div class="video-media">
+      <video playsinline="" autoplay="" loop="" muted="" data-autoplay="" poster="/images/ocean/ocean.png"
+        x5-video-player-type="h5">
+        <source src="/images/ocean/ocean.mp4" type="video/mp4">
+        <source src="/images/ocean/ocean.ogv" type="video/ogg">
+        <source src="/images/ocean/ocean.webm" type="video/webm">
+        <p>Your user agent does not support the HTML5 Video element.</p>
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="video-inner text-center text-white">
+      <h1><a href="/">神兜兜气昂昂</a></h1>
+      <p>一个前端小趴菜</p>
+      <div><img src="/images/shark.svg" class="brand" alt="神兜兜气昂昂"></div>
+    </div>
+    <div class="video-learn-more">
+      <a class="anchor" href="#landingpage"><i class="fe fe-mouse"></i></a>
+    </div>
+  </div>
+</section>
+<div id="landingpage">
+  <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title"></h1>
+    
+    
+    <article id="post-first" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -45,9 +77,9 @@
     <header class="article-header">
       
   
-  <h1 class="article-title" itemprop="name">
-    记录第一次搭建博客的艰苦历程
-  </h1>
+  <h2 class="article-title" itemprop="name">
+    <a href="/2020/04/02/first/">记录第一次搭建博客的艰苦历程</a>
+  </h2>
   
   
 
@@ -65,13 +97,11 @@
     
 
     
-    
-<div class="tocbot"></div>
-
-    
 
     <div class="article-entry" itemprop="articleBody">
       
+      
+        
       
       
         <h4 id="我为什么要搭建一篇博客？"><a href="#我为什么要搭建一篇博客？" class="headerlink" title="我为什么要搭建一篇博客？"></a>我为什么要搭建一篇博客？</h4><blockquote>
@@ -81,31 +111,13 @@
 </blockquote>
 <p>编写博客使用的几乎全是Markdown语法，先给不知道怎么写的小伙伴上个链接~<a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/">Markdown官网</a></p>
 <p>我也在网上扒拉了一篇，也可以看看<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014061630/article/details/81359144?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522168967454716800197084944%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=168967454716800197084944&biz_id=0&utm_medium=distribute.pc_chrome_plugin_search_result.none-task-blog-2~all~top_positive~default-1-81359144-null-null.nonecase&utm_term=markdown%E8%AF%AD%E6%B3%95&spm=1018.2226.3001.4187">语法图文全面详解</a></p>
-<span id="more"></span>
-
-<h2 id="安装hexo包"><a href="#安装hexo包" class="headerlink" title="安装hexo包"></a>安装hexo包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建一个hexo博客"><a href="#创建一个hexo博客" class="headerlink" title="创建一个hexo博客"></a>创建一个hexo博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init 博客名称</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建一个文件进行编写博客"><a href="#创建一个文件进行编写博客" class="headerlink" title="创建一个文件进行编写博客"></a>创建一个文件进行编写博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My blog</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="本地启动博客-—-Run-server"><a href="#本地启动博客-—-Run-server" class="headerlink" title="本地启动博客 — Run server"></a>本地启动博客 — Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server (hexo s)</span><br></pre></td></tr></table></figure>
-
-<h3 id="打包为静态文件"><a href="#打包为静态文件" class="headerlink" title="打包为静态文件"></a>打包为静态文件</h3><p>hexo g 命令执行后会生成一个public文件下，这个文件夹便是打包后生成的静态文件夹。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo g)</span><br></pre></td></tr></table></figure>
-
-<h3 id="推送至github"><a href="#推送至github" class="headerlink" title="推送至github"></a>推送至github</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>这里也可以使用git命令行来推送至远程仓库（敲命令行主要是帅！！！帅就完了啊哈哈哈哈哈哈哈哈）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;提交备注&#x27;</span></span><br><span class="line">git pull</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="清空博客缓存"><a href="#清空博客缓存" class="headerlink" title="清空博客缓存"></a>清空博客缓存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-
-<h3 id="清除本地项目并重新生成-（重新部署时使用）"><a href="#清除本地项目并重新生成-（重新部署时使用）" class="headerlink" title="清除本地项目并重新生成 （重新部署时使用）"></a>清除本地项目并重新生成 （重新部署时使用）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新文章最新日期"><a href="#更新文章最新日期" class="headerlink" title="更新文章最新日期"></a>更新文章最新日期</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node update-date.js &lt;文章名&gt;.md</span><br><span class="line">例如：node update-date.js javaScript.md</span><br></pre></td></tr></table></figure>
-
-
+        
+          <p>
+            <a class="article-more-link" href="/2020/04/02/first/">
+              阅读全文...
+            </a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -120,30 +132,21 @@
   </div>
 
   
-  
-<nav class="article-nav">
-  
-  <a href="/2020/05/15/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85/" class="article-nav-link">
-    <strong class="article-nav-caption">上一篇</strong>
-    <div class="article-nav-title">
-      
-      关于闭包
-      
-    </div>
-  </a>
-  
-  
-</nav>
 
-  
-
-  
-  
-  
   
 
 </article>
+    
+  </article>
+  
+
+  
+  <nav class="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+  
 </section>
+</div>
     <footer class="footer">
   <div class="outer">
     <ul class="list-inline">
@@ -163,9 +166,9 @@
     <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人次</span> -->
     <p><ul class="list-inline">
   
-  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
+  <li><i class="fe fe-bar-chart tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_site_pv"></span></li>
   
-  <li><i class="fe fe-bookmark tooltip" data-tooltip="PV"></i> <span id="busuanzi_value_page_pv"></span></li>
+  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
   
 </ul></p>
   </div>
@@ -250,24 +253,6 @@
 
 
 
-
-
-<script src="/js/tocbot.min.js"></script>
-
-
-<script>
-  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
-  tocbot.init({
-    tocSelector: '.tocbot',
-    contentSelector: '.article-entry',
-    headingSelector: 'h1, h2, h3, h4, h5, h6',
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    positionFixedSelector: '.tocbot',
-    positionFixedClass: 'is-position-fixed',
-    fixedSidebarOffset: 'auto',
-  });
-</script>
 
 
 
